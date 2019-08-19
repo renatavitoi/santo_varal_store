@@ -1,0 +1,1 @@
+# santo_varal_store
