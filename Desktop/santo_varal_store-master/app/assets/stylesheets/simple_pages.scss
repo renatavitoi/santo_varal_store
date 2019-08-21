@@ -1,0 +1,46 @@
+// Place all the styles related to the simple_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	 box-sizing: border-box;
+	 }
+
+	 .navbar-nav {
+	 	flex-direction: row;
+	 	 }
+
+.nav a:hover {
+	 color: black;
+   }
+
+.navbar-nav li {
+	margin-right: 15px;
+	 }
+
+.navbar-brand {
+	font-size: 1.3em;
+  }
+
+.nav {
+  z-index: 1;
+	 }
+
+.carrousel-caption  {
+  color: #FF0080;
+	font-size: 2rem;
+	margin: 0 auto;
+	padding-top: 65px;
+	height: 100px;
+	 }
+
+.column {
+	width: 33.3333333;
+	margin: 100px;
+	padding-top: 100px;
+	display: inline-block;
+	 }
+
+.button {
+	border-radius: 2px;
+	 }

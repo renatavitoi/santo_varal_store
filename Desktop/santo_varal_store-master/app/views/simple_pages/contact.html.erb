@@ -1,0 +1,26 @@
+<%# Contact %>
+<h2>Contact us:</h2>
+
+<p>If you wish to contact us just fill up the form below.</p>
+
+<%= flash[:notice] %>
+
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row">
+  <div class="col-md-8">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter your name", require: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter your email", require: true, validates: :email %>
+  </div>
+  <div class="form-group">
+    <%= form.label :message %>
+    <%= form.text_area :message, class: "form-control", placeholder: "Enter your message", rows: 5, require: true %>
+  </div>
+</div>
+</div>
+<%= form.submit "Send", class: "form_label" %>
+<% end %>
