@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 
+
     # GET /users
     # GET /users.json
     def index
@@ -10,17 +11,29 @@ class UsersController < ApplicationController
     # GET /users/1
     # GET /users/1.json
     def show
-  		@user = User.find(params[:id])
+    if params[:id] = "sign_out"
+       sign_out current_user
+      return
+
+       set_user
+      # escape possible NIL errors with user data
+    if @user.first_name.blank?
+       @user.first_name = "anonymous"
     end
+    if @user.last_name.blank?
+      @user.last_name = ""
+      end
+    end
+  end
 
     # GET /users/new
     def new
-      @user = User.new
-    end
+     @user = User.new #this creates a empty user object to be filled with signup data
+     @title = "Sign up"
+   end
 
     # GET /users/1/edit
     def edit
-  		@user = User.find(params[:id])
     end
 
   	def update_password
@@ -83,6 +96,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name)
     end
 end

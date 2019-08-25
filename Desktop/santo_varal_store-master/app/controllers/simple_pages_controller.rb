@@ -2,6 +2,12 @@
   def index
   end
 
+
+  def landing_page
+     @products = Product.limit(3)
+   end
+
+
   def thank_you
      @name = params[:name]
      @email = params[:email]
@@ -11,9 +17,4 @@
          subject: "A new contact from message from #{@name}",
          body: @message).deliver_now
     end
-
-
-  def landing_page
-     @products = Product.limit(3)
-   end
   end

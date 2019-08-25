@@ -1,14 +1,16 @@
-<!-- <div id="notice alert-warning"><%= notice %></div> -->
+<div class="content-user">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= @ufirst_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @last_name %>
+  </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path %> |
+  <%= link_to 'Back', users_path %>
+</div>
