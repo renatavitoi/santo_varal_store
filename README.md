@@ -1,4 +1,3 @@
-
 # README
 
 My name is Renata Bandeira Vitoi and this is my first app. An e-commerce for makeup and perfumery called Santo Varal Store.
