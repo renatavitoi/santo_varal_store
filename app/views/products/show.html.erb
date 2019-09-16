@@ -18,12 +18,12 @@
         <%= @product.price %>
         <% end %>
         <hr>
-      <p><strong><p>Average Ratings:</p></strong>
+      <p><strong>Average Ratings:</strong></p>
      <h6>Highest rating of the products: </h6>
-      <%= @product.comments.rating_desc.first %>
+      <%= @product.comments.rating_desc.second %>
+     <h6>Lowest rating of the products: </h6>
+       <%= @product.comments.rating_desc.first %>
         <hr>
-
-
 
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
