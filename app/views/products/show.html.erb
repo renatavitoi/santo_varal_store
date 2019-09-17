@@ -19,19 +19,17 @@
         <% end %>
         <hr>
       <p><strong>Average Ratings:</strong></p>
+       <% if @product.comments.exists? %>
      <h6>Highest rating of the products: </h6>
-      <%= @product.comments.rating_desc.first %>
+      <p><%= @product.first.highest_rating_comment %></p>
      <h6>Lowest rating of the products: </h6>
-       <%= @product.comments.rating_asc.first %>
+       <p><%= @product.first.lowest_rating_comment %></p>
         <hr>
+        <% end %>
+
 
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
         </div>
-
-        <%= render 'new_comment' %>
-    
-
-
     </div>
    </div>
