@@ -14124,3 +14124,558 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 33ms (Views: 26.5ms | ActiveRecord: 2.4ms)
 
 
+Started GET "/simple_pages/about" for ::1 at 2019-09-17 08:13:04 +0200
+Processing by SimplePagesController#about as HTML
+  Rendering simple_pages/about.html.erb within layouts/application
+  Rendered simple_pages/about.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 203ms (Views: 190.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-17 08:13:07 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (18.2ms)
+  Rendered products/index.html.erb within layouts/application (53.9ms)
+Completed 200 OK in 103ms (Views: 94.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 08:13:09 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 61ms (Views: 48.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-17 09:17:18 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (3.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 357ms (Views: 256.3ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/products" for ::1 at 2019-09-17 09:17:24 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (7.3ms)
+  Rendered products/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 58ms (Views: 52.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 09:17:26 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+Creating scope :rating_desc. Overwriting existing method Comment.rating_desc.
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/show.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 82ms (Views: 70.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 09:45:57 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (11.8ms)
+  Rendered products/show.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 197ms (Views: 170.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-17 09:46:01 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (11.9ms)
+  Rendered products/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 65ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 09:46:04 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.0ms)
+  Rendered products/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 53ms (Views: 47.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 09:46:36 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (2.7ms)
+  Rendered products/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 354ms (Views: 348.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 09:47:09 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+Creating scope :rating_desc. Overwriting existing method Comment.rating_desc.
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.7ms)
+  Rendered products/show.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 179ms (Views: 85.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/products" for ::1 at 2019-09-17 09:47:14 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (5.7ms)
+  Rendered products/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 52ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-17 09:47:16 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 2], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.4ms)
+  Rendered products/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 38ms (Views: 32.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-17 10:09:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (3.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+Creating scope :rating_desc. Overwriting existing method Comment.rating_desc.
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 2], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.9ms)
+  Rendered products/show.html.erb within layouts/application (26.9ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 8.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131741919260'
+Started GET "/products/1" for ::1 at 2019-09-17 10:09:41 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.0ms)
+  Rendered products/show.html.erb within layouts/application (26.8ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131712763220'
+Started GET "/products/1" for ::1 at 2019-09-17 10:23:33 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (4.4ms)
+  Rendered products/show.html.erb within layouts/application (76.1ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 7.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131748562680'
+Started GET "/products/1" for ::1 at 2019-09-17 10:23:39 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (3.2ms)
+  Rendered products/show.html.erb within layouts/application (35.4ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131708421440'
+Started GET "/products" for ::1 at 2019-09-17 10:25:27 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (7.8ms)
+  Rendered products/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 66ms (Views: 58.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 10:25:28 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (2.1ms)
+  Rendered products/show.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131742891720'
+Started GET "/products/1" for ::1 at 2019-09-17 10:28:22 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.5ms)
+  Rendered products/show.html.erb within layouts/application (23.8ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131717352060'
+Started GET "/products/1" for ::1 at 2019-09-17 10:32:43 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (6.1ms)
+  Rendered products/show.html.erb within layouts/application (53.9ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131743265860'
+Started GET "/products/1" for ::1 at 2019-09-17 10:33:29 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.3ms)
+  Rendered products/show.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131747563280'
+Started GET "/products/1" for ::1 at 2019-09-17 10:33:32 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.3ms)
+  Rendered products/show.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131747531320'
+Started GET "/products/1" for ::1 at 2019-09-17 10:33:37 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (0.9ms)
+  Rendered products/show.html.erb within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial products/_comments, application/_comments with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/renatavitoi/Desktop/santo_varal_store/app/views"
+  * "/Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/devise-4.7.0/app/views"
+):
+    30:         </div>
+    31: 
+    32:         <%= render 'new_comment' %>
+    33:         <%= render 'comments' %>
+    34: 
+    35: 
+    36:     </div>
+  
+app/views/products/show.html.erb:33:in `_app_views_products_show_html_erb__1579928349685686224_70131713718060'
+Started GET "/products/1" for ::1 at 2019-09-17 10:33:46 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.5ms)
+  Rendered products/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 63ms (Views: 56.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 10:33:54 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.4ms)
+  Rendered products/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 55ms (Views: 46.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-17 10:34:09 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.2ms)
+  Rendered products/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 124ms (Views: 116.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/simple_pages/contact" for ::1 at 2019-09-17 10:34:12 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 163ms (Views: 158.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-17 10:34:13 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (6.3ms)
+  Rendered products/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 47ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-17 10:34:14 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" ASC LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  Rendered products/_new_comment.html.erb (1.5ms)
+  Rendered products/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 44ms (Views: 36.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/simple_pages/contact" for ::1 at 2019-09-17 10:34:21 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-17 10:34:22 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 46ms (Views: 38.8ms | ActiveRecord: 0.9ms)
+
+

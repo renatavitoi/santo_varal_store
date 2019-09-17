@@ -20,13 +20,18 @@
         <hr>
       <p><strong>Average Ratings:</strong></p>
      <h6>Highest rating of the products: </h6>
-      <%= @product.comments.rating_desc.second %>
+      <%= @product.comments.rating_desc.first %>
      <h6>Lowest rating of the products: </h6>
-       <%= @product.comments.rating_desc.first %>
+       <%= @product.comments.rating_asc.first %>
         <hr>
 
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
-      </div>
+        </div>
+
+        <%= render 'new_comment' %>
+    
+
+
     </div>
    </div>
