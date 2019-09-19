@@ -75,3 +75,7 @@ gem 'devise'
 
 #Cancancan
 gem 'cancancan', '~> 1.10'
+
+
+#Ratings
+gem 'rating'
