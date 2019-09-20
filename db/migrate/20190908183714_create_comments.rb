@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.text :body
       t.integer :rating
       t.references :product, index: true
+
       t.timestamps
     end
   end

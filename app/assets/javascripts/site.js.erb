@@ -1,4 +1,3 @@
-$(document).on('turbolinks:load', function(){
   $(document).on('turbolinks:load', function(){
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
@@ -19,15 +18,6 @@ $(document).on('turbolinks:load', function(){
 });
 
 
-   //ELEVATORZOOM JS
-   $('.img-zoom').elevateZoom();
-});
-
 //Alert
   $(".alert").delay(3000).slideUp(500, function(){
-});
-
-
-$(document).on('turbolinks:load', function(){
-    $('.rating').raty();
 });

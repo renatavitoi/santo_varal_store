@@ -18,13 +18,8 @@
         <%= @product.price %>
         <% end %>
         <hr>
-      </div>
-      <div>
-      <p>Average Rating:
-      <div class="rated" data-score="<%= @product.average_rating %>"></div>
-      </p>
-      </div>
 
+      <p><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">Average Rating: </div></p>
        <% if @product.comments.exists? %>
      <h6>Highest rating of the products: </h6>
       <p><%= @product.first.highest_rating_comment.body %></p>
@@ -32,13 +27,14 @@
        <p><%= @product.first.lowest_rating_comment.body %></p>
         <hr>
         <% end %>
-        
+
+        <div class="col-md-6">
         <%= render 'new_comment' %>
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
 
+          <div class="col-md-6">
           <%= render 'comments' %>
-
       </div>
    </div>
 </div>
