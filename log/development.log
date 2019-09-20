@@ -18851,3 +18851,1377 @@ Processing by SimplePagesController#landing_page as HTML
 Completed 200 OK in 407ms (Views: 396.5ms | ActiveRecord: 4.7ms)
 
 
+Started GET "/products" for ::1 at 2019-09-20 09:12:37 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (16.8ms)
+  Rendered products/index.html.erb within layouts/application (79.2ms)
+  [1m[36mUser Load (26.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 414ms (Views: 373.5ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-20 09:12:40 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (35.8ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007f94df66e5b0>):
+    19:         <% end %>
+    20:         <hr>
+    21: 
+    22:       <p><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">Average Rating: </div></p>
+    23:        <% if @product.comments.exists? %>
+    24:      <h6>Highest rating of the products: </h6>
+    25:       <p><%= @product.first.highest_rating_comment.body %></p>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__283591231579178173_70138741313780'
+Started GET "/products/1" for ::1 at 2019-09-20 09:55:59 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (5.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (285.3ms)
+Completed 500 Internal Server Error in 751ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007f94e59fcca8>):
+    19:         <% end %>
+    20:         <hr>
+    21: 
+    22:       <p><div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">Average Rating: </div></p>
+    23:        <% if @product.comments.exists? %>
+    24:      <h6>Highest rating of the products: </h6>
+    25:       <p><%= @product.first.highest_rating_comment.body %></p>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__283591231579178173_70138742156720'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 09:56:01 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cK8+HBAicdUFdx1rqAu72qv7o1vRi4i/I5keuS/Zhajj8u0fNQ42BaAsUqi9w2QGSSnn37Mw94hqlt3HwAyTJw==", "id"=>"sign_out"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 10ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started GET "/" for ::1 at 2019-09-20 09:56:32 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 142ms (Views: 134.0ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:00:18 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dfp7j64VV44K3acHfM5Gty+k4S2cr0gMUumy2jSdUmWep6iMizkQXq+G6MRpBplrzXalqf4UNzsb5nGk20hE6g==", "id"=>"sign_out"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 67ms (ActiveRecord: 4.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:03:58 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dfp7j64VV44K3acHfM5Gty+k4S2cr0gMUumy2jSdUmWep6iMizkQXq+G6MRpBplrzXalqf4UNzsb5nGk20hE6g==", "id"=>"sign_out"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 48ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:04:14 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dfp7j64VV44K3acHfM5Gty+k4S2cr0gMUumy2jSdUmWep6iMizkQXq+G6MRpBplrzXalqf4UNzsb5nGk20hE6g==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started GET "/" for ::1 at 2019-09-20 10:04:25 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (41.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 729ms (Views: 588.6ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:04:33 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GvgPGadauAJ1C/YuIYyof754yfP4EqTHBdoTu+uslFmJpdwagnb/0tBQue00RHejXKqNd5qp2/BM1dDFBHmC1g==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started GET "/products" for ::1 at 2019-09-20 10:04:40 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (8.5ms)
+  Rendered products/index.html.erb within layouts/application (16.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 184ms (Views: 177.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-20 10:04:41 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (24.5ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007f94dfdd3c38>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    23:         </p>
+    24:       
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__283591231579178173_70138689095280'
+Started GET "/products/2" for ::1 at 2019-09-20 10:06:07 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (27.8ms)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 11.5ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007f94e4ca94e8>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    23:         </p>
+    24:       
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__283591231579178173_70138734985680'
+Started GET "/products/2" for ::1 at 2019-09-20 10:06:12 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007f94e4d863c0>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    23:         </p>
+    24:       
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__283591231579178173_70138731547900'
+Started GET "/" for ::1 at 2019-09-20 10:06:16 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 388ms (Views: 342.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:06:20 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 106ms (Views: 101.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/simple_pages/contact" for ::1 at 2019-09-20 10:06:33 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (21.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 448ms (Views: 419.0ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:06:37 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (7.3ms)
+  Rendered products/index.html.erb within layouts/application (29.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 202ms (Views: 175.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:06:40 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 190ms (Views: 182.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:45 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:84
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:84:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:47 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:84
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:84:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:48 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:48 +0200
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:48 +0200
+  ↳ app/controllers/users_controller.rb:84
+Processing by UsersController#destroy as HTML
+Processing by UsersController#destroy as HTML
+Completed 404 Not Found in 563ms (ActiveRecord: 0.3ms)
+
+
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  ↳ app/controllers/users_controller.rb:84
+  ↳ app/controllers/users_controller.rb:84
+  
+Completed 404 Not Found in 497ms (ActiveRecord: 0.4ms)
+
+
+Completed 404 Not Found in 437ms (ActiveRecord: 0.2ms)
+
+
+app/controllers/users_controller.rb:84:in `set_user'
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+  
+app/controllers/users_controller.rb:84:in `set_user'
+app/controllers/users_controller.rb:84:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:49 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:84
+Completed 404 Not Found in 52ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:84:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:06:50 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"acKCySp6lX0n5NDPCv75V3G3A/4wk6JDY/OoxhDaHaT6n1HKD1bSrYK/nwwfNiaLk2VHelIo3XQq/Gu4/w8LKw==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:84
+Completed 404 Not Found in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:84:in `set_user'
+Started GET "/" for ::1 at 2019-09-20 10:10:23 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (38.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 843ms (Views: 766.7ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:10:30 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 216ms (Views: 211.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:10:41 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7E4ocHnb9NXvIZdHKfXpTQ788bApAeLi8TMllldj8Yl/E/tzXPezBUp62IQ8PTaR7C61NEu6ndW4PObouLbnBg==", "id"=>"sign_out"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 10ms (ActiveRecord: 4.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started DELETE "/users/sign_out" for ::1 at 2019-09-20 10:10:41 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7E4ocHnb9NXvIZdHKfXpTQ788bApAeLi8TMllldj8Yl/E/tzXPezBUp62IQ8PTaR7C61NEu6ndW4PObouLbnBg==", "id"=>"sign_out"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:85
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:85:in `set_user'
+Started GET "/" for ::1 at 2019-09-20 10:19:25 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 3032ms (Views: 2874.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:19:33 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (5.6ms)
+  Rendered products/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 167ms (Views: 136.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-20 10:19:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (17.3ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88f2321a8>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    23:         </p>
+    24:       
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215329302340'
+Started GET "/products/5" for ::1 at 2019-09-20 10:21:11 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb8897cb5e8>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24:        <% if @product.comments.exists? %>
+    25:      <h6>Highest rating of the products: </h6>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215278675120'
+Started GET "/products" for ::1 at 2019-09-20 10:21:13 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (3.5ms)
+  Rendered products/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 145ms (Views: 134.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-20 10:28:57 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (21.3ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88f2f4938>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215326461480'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to CreateProducts (20190523075739)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190523075739_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190523075739"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to AddColorToProducts (20190608130824)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "products" ADD "color" varchar[0m
+  ↳ db/migrate/20190608130824_add_color_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190608130824"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to RenameColorsInProducts (20190609055925)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20190609055925_rename_colors_in_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","image_url","created_at","updated_at","colour")
+                     SELECT "id","name","description","image_url","created_at","updated_at","color" FROM "products"[0m
+  ↳ db/migrate/20190609055925_rename_colors_in_products.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20190609055925_rename_colors_in_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20190609055925_rename_colors_in_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","image_url","created_at","updated_at","colour")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour" FROM "aproducts"[0m
+  ↳ db/migrate/20190609055925_rename_colors_in_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20190609055925_rename_colors_in_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190609055925"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to AddPriceToProducts (20190630074808)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "products" ADD "price" decimal[0m
+  ↳ db/migrate/20190630074808_add_price_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190630074808"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to CreateOrders (20190705143627)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/migrate/20190705143627_create_orders.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/migrate/20190705143627_create_orders.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/migrate/20190705143627_create_orders.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190705143627"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to CreateUsers (20190816135947)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190816135947_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190816135947"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (38.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to AddDeviseToUsers (20190816140614)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:40
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190816140614_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190816140614"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Migrating to CreateComments (20190908183714)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190908183714_create_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/migrate/20190908183714_create_comments.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/migrate/20190908183714_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190908183714"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-20 08:33:02.075114"], ["updated_at", "2019-09-20 08:33:02.075114"]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Started GET "/products/1" for ::1 at 2019-09-20 10:35:19 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+Completed 404 Not Found in 24ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  
+app/controllers/products_controller.rb:76:in `set_product'
+Started GET "/" for ::1 at 2019-09-20 10:38:48 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 177ms (Views: 170.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/simple_pages/contact" for ::1 at 2019-09-20 10:38:56 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (123.7ms)
+Completed 200 OK in 213ms (Views: 209.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/simple_pages/about" for ::1 at 2019-09-20 10:38:56 +0200
+Processing by SimplePagesController#about as HTML
+  Rendering simple_pages/about.html.erb within layouts/application
+  Rendered simple_pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:38:58 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 80ms (Views: 71.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:39:06 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 68ms (Views: 64.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:39:19 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 126ms (Views: 121.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:39:20 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 155ms (Views: 151.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:39:21 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 77ms (Views: 73.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:39:38 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 71ms (Views: 63.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:39:48 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 107ms (Views: 101.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/simple_pages/about" for ::1 at 2019-09-20 10:39:49 +0200
+Processing by SimplePagesController#about as HTML
+  Rendering simple_pages/about.html.erb within layouts/application
+  Rendered simple_pages/about.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/simple_pages/contact" for ::1 at 2019-09-20 10:39:50 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 88ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:39:51 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered products/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 69ms (Views: 64.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:39:53 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered products/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 10:39:54 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.0ms)
+  Rendered products/new.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 185ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 10:43:10 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZHbGVZ/o9RaOqA5UExwX1Adr3zKPRhiTFuIVUb3GKNis38yUCV5HV/5JLzP35v4zoBaCSGGuHX1PwXSfkBgWg==", "product"=>{"name"=>" Eyeshadow Pallet", "description"=>"Colorful Eyeshadow Pallet", "image_url"=>"https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", "colour"=>"", "price"=>"€ 50,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", " Eyeshadow Pallet"], ["description", "Colorful Eyeshadow Pallet"], ["image_url", "https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"], ["created_at", "2019-09-20 08:43:10.061102"], ["updated_at", "2019-09-20 08:43:10.061102"], ["colour", ""]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 12ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-20 10:43:10 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (67.1ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88eb642e0>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215322448780'
+Started GET "/" for ::1 at 2019-09-20 10:43:21 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 112ms (Views: 105.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:43:29 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [1 times] (2.2ms)
+  Rendered products/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 165ms (Views: 159.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 10:45:21 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.2ms)
+  Rendered products/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 151ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 10:48:35 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6XH9mLD5GypmJCHPTFua60/+q5llciLiruMYZ2DVnpm+U1mztqPB42PnpUrTyHFM0WNe7I7JgvUXh5XgWGLmYA==", "product"=>{"name"=>"Lipsticks", "description"=>"Lip balms with protectors", "image_url"=>"https://images.unsplash.com/photo-1562887284-8ba6b7c90fd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", "colour"=>"Red, Dark Red and Pink", "price"=>"€ 45,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (5.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lipsticks"], ["description", "Lip balms with protectors"], ["image_url", "https://images.unsplash.com/photo-1562887284-8ba6b7c90fd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"], ["created_at", "2019-09-20 08:48:35.448563"], ["updated_at", "2019-09-20 08:48:35.448563"], ["colour", "Red, Dark Red and Pink"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 40ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-20 10:48:35 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (73.3ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb8896e0a98>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215278186080'
+Started GET "/" for ::1 at 2019-09-20 10:48:42 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 154ms (Views: 148.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 10:49:14 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 113ms (Views: 103.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:49:20 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [2 times] (1.9ms)
+  Rendered products/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 84ms (Views: 76.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 10:49:21 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.8ms)
+  Rendered products/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 99ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 10:53:04 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uaPg4TXpY6gIlVtQT1uxvP6h88zwPdckPaw2pcmrrCLugUTKM7O5YQ1W39XQyFobYDwGuRuGdzOEyLsi8RzU2w==", "product"=>{"name"=>"Green Perfume", "description"=>"It has the raw materials extracted from citrus peel, fruits such as: lemon, bergamot, mandarin, mandarin, among others.", "image_url"=>"https://images.unsplash.com/photo-1541108564883-bec8126021f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80", "colour"=>"Green", "price"=>"€ 150,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Green Perfume"], ["description", "It has the raw materials extracted from citrus peel, fruits such as: lemon, bergamot, mandarin, mandarin, among others."], ["image_url", "https://images.unsplash.com/photo-1541108564883-bec8126021f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"], ["created_at", "2019-09-20 08:53:04.886492"], ["updated_at", "2019-09-20 08:53:04.886492"], ["colour", "Green"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 12ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/products/3" for ::1 at 2019-09-20 10:53:04 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (20.1ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88eb246b8>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215322364980'
+Started GET "/" for ::1 at 2019-09-20 10:53:12 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 139ms (Views: 131.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:53:48 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [3 times] (2.3ms)
+  Rendered products/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 189ms (Views: 183.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 10:53:50 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.6ms)
+  Rendered products/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 10:56:06 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A2pU7BzHO41HE+OWBWcFtnxhNCICV+pOv4EXR//Uqt5USPDHGp3hRELQZxOa9O4R4vzBV+nsSlkG5ZrAx2PSJw==", "product"=>{"name"=>"Lipstick and Eyeshadow", "description"=>" Lipstick and Eyeshadow set.", "image_url"=>"https://images.unsplash.com/photo-1566401912303-c436abc80c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80", "colour"=>"Brown", "price"=>"€ 35,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lipstick and Eyeshadow"], ["description", " Lipstick and Eyeshadow set."], ["image_url", "https://images.unsplash.com/photo-1566401912303-c436abc80c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"], ["created_at", "2019-09-20 08:56:06.497608"], ["updated_at", "2019-09-20 08:56:06.497608"], ["colour", "Brown"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 16ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/products/4" for ::1 at 2019-09-20 10:56:06 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88965ad80>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215277911620'
+Started GET "/" for ::1 at 2019-09-20 10:56:12 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 178ms (Views: 171.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:56:14 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [4 times] (3.0ms)
+  Rendered products/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 179ms (Views: 172.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:57:17 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [4 times] (3.9ms)
+  Rendered products/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 194ms (Views: 188.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 10:57:22 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.0ms)
+  Rendered products/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 184ms (Views: 177.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 10:58:16 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AFVv9LkaJPNkUNUfqAuhScERNES/PCf1svhXvQsO3BpXd8vfv0D+OmGTUZo3mEruX4zBMVSHh+ILnNo6M7mk4w==", "product"=>{"name"=>"Eyeshadow palets, Illuminator, Gloss, Brushes", "description"=>"Eyeshadow palets, Illuminator, Gloss, Brushes sets.", "image_url"=>"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80", "colour"=>"Nude", "price"=>"€ 60,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Eyeshadow palets, Illuminator, Gloss, Brushes"], ["description", "Eyeshadow palets, Illuminator, Gloss, Brushes sets."], ["image_url", "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"], ["created_at", "2019-09-20 08:58:16.530342"], ["updated_at", "2019-09-20 08:58:16.530342"], ["colour", "Nude"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/5
+Completed 302 Found in 12ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/products/5" for ::1 at 2019-09-20 10:58:16 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb888dd0ed0>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215273433660'
+Started GET "/" for ::1 at 2019-09-20 10:58:22 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 158ms (Views: 151.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 10:58:25 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [5 times] (4.4ms)
+  Rendered products/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 83ms (Views: 79.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 11:00:16 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.9ms)
+  Rendered products/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 132ms (Views: 123.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 11:01:10 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E0ca1XJSkjhyklsst2ihnQVIxYvn8xh6Aio6Ae0qmJVEZb7+dAhI8XdR36ko+0o6m9Uw/gxIuG27TreG1Z3gbA==", "product"=>{"name"=>"Nude Lipstick", "description"=>"Creamy and soft lipstick.", "image_url"=>"https://images.unsplash.com/photo-1555050455-f96634b5cba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", "colour"=>"Nude", "price"=>"€ 35,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nude Lipstick"], ["description", "Creamy and soft lipstick."], ["image_url", "https://images.unsplash.com/photo-1555050455-f96634b5cba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"], ["created_at", "2019-09-20 09:01:10.534099"], ["updated_at", "2019-09-20 09:01:10.534099"], ["colour", "Nude"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/6
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/products/6" for ::1 at 2019-09-20 11:01:10 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (19.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88c7f1448>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215303890760'
+Started GET "/" for ::1 at 2019-09-20 11:01:16 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 130ms (Views: 123.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 11:01:19 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [6 times] (3.7ms)
+  Rendered products/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 96ms (Views: 91.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 11:02:07 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.2ms)
+  Rendered products/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 115ms (Views: 108.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 11:03:21 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/DubQvr51lXkG5oJgPDDbpNUHtUYTkCyuql8GNHm1C6rGT9p/KMMnOHYHowfYyjJDcnroPP14KUDzfGf6VGs1w==", "product"=>{"name"=>"Perfume number 5", "description"=>"Top notes: Neroli, ylang ylang, bergamot, lemon. Middle notes: aldehydes, iris, orris root, jasmine, rose, lily of the valley. Base notes: vetiver, musk, sandalwood, patchouli, vanilla, oakmoss, amber and civet.", "image_url"=>"https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=648&q=80", "colour"=>"Yellow", "price"=>"€ 100,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Perfume number 5"], ["description", "Top notes: Neroli, ylang ylang, bergamot, lemon. Middle notes: aldehydes, iris, orris root, jasmine, rose, lily of the valley. Base notes: vetiver, musk, sandalwood, patchouli, vanilla, oakmoss, amber and civet."], ["image_url", "https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=648&q=80"], ["created_at", "2019-09-20 09:03:21.526977"], ["updated_at", "2019-09-20 09:03:21.526977"], ["colour", "Yellow"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/7
+Completed 302 Found in 11ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/products/7" for ::1 at 2019-09-20 11:03:21 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (27.3ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb888d82cf8>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215273273520'
+Started GET "/products" for ::1 at 2019-09-20 11:03:26 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [7 times] (4.2ms)
+  Rendered products/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 211ms (Views: 204.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 11:03:57 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.1ms)
+  Rendered products/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 112ms (Views: 105.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 11:05:08 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CJVjLavsTPFadV8WfSVXsw1bDuPJGf1cqFLLVUgaeVJft8cGrbaWOF+225PitrwUk8b7liKiXUsRNkbScK0Bqw==", "product"=>{"name"=>"Illuminator and Contour", "description"=>"Colourful contour and Illuminator for face.", "image_url"=>"https://images.unsplash.com/photo-1526045405698-cf8b8acc4aaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80", "colour"=>"Colourful and Shine", "price"=>"€ 80,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Illuminator and Contour"], ["description", "Colourful contour and Illuminator for face."], ["image_url", "https://images.unsplash.com/photo-1526045405698-cf8b8acc4aaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"], ["created_at", "2019-09-20 09:05:08.853563"], ["updated_at", "2019-09-20 09:05:08.853563"], ["colour", "Colourful and Shine"]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/8
+Completed 302 Found in 10ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/products/8" for ::1 at 2019-09-20 11:05:08 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88e9437e0>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215321388180'
+Started GET "/" for ::1 at 2019-09-20 11:05:15 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 146ms (Views: 140.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 11:05:22 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [8 times] (4.8ms)
+  Rendered products/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 94ms (Views: 84.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2019-09-20 11:07:12 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.0ms)
+  Rendered products/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 214ms (Views: 207.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2019-09-20 11:08:30 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gg0xHLHZ6cx8fne+4lrHoEtH3MuFf33lSuGzEuFbpoLVL5U3t4MzBXm98zt9ySwH1dopvm7E3fLzhT6V2ezeew==", "product"=>{"name"=>"Pink Perfume", "description"=>"It has the raw material extracted from flowers, usually a single species to produce a perfume, such as pink, violet and jasmine.", "image_url"=>"https://images.unsplash.com/photo-1458538977777-0549b2370168?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80", "colour"=>"", "price"=>"€ 135,00"}, "name"=>"", "commit"=>"Create Product"}
+Unpermitted parameter: :price
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pink Perfume"], ["description", "It has the raw material extracted from flowers, usually a single species to produce a perfume, such as pink, violet and jasmine."], ["image_url", "https://images.unsplash.com/photo-1458538977777-0549b2370168?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80"], ["created_at", "2019-09-20 09:08:30.042154"], ["updated_at", "2019-09-20 09:08:30.042154"], ["colour", ""]]
+  ↳ app/controllers/products_controller.rb:37
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37
+Redirected to http://localhost:3000/products/9
+Completed 302 Found in 10ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/products/9" for ::1 at 2019-09-20 11:08:30 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88f86be20>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215329335060'
+Started GET "/" for ::1 at 2019-09-20 11:08:36 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 136ms (Views: 129.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-09-20 11:08:39 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (5.6ms)
+  Rendered products/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 192ms (Views: 184.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-20 11:08:47 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 189ms (Views: 184.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.4.1/gems/rake-12.3.3/lib/rake/task.rb:273
+Started GET "/products" for ::1 at 2019-09-20 11:09:12 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (5.0ms)
+  Rendered products/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 193ms (Views: 168.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/2" for ::1 at 2019-09-20 11:09:23 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (private method `average_rating' called for #<Product:0x007fb88970ad98>):
+    19:         <% end %>
+    20:         <hr>
+    21:         <p>Average Rating:
+    22:               <div class="rated" data-score="<%= @product.average_rating %>"></div>
+    23:       </p>
+    24: 
+    25:        <% if @product.comments.exists? %>
+  
+app/views/products/show.html.erb:22:in `_app_views_products_show_html_erb__4375550020645540624_70215278138460'
