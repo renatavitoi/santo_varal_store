@@ -20,11 +20,11 @@ class UsersController < ApplicationController
     # GET /users/new
     def new
      @user = User.new #this creates a empty user object to be filled with signup data
-     @title = "Sign up"
    end
 
     # GET /users/1/edit
     def edit
+      flash[:error] = []
     end
 
   	def update_password
@@ -42,6 +42,13 @@ class UsersController < ApplicationController
     # POST /users.json
     def create
       @user = User.new(user_params)
+      if @user.valid?
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+      else
+        flash[:error] = @user.errors.full_messages
+        render :new
+      end
 
       respond_to do |format|
         if @user.save

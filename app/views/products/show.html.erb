@@ -3,11 +3,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-  <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image: "@product.image_url") %>
+      <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image: "@product.image_url") %>
       <% cache @product do %>
       <p><strong>Name:</strong></p>
       <%= @product.name %>
-      <hr>
+        <hr>
       <p><strong>Description:</strong></p>
         <%= @product.description %>
         <hr>
@@ -18,22 +18,28 @@
         <%= @product.price %>
         <% end %>
         <hr>
-        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
+        <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
         <% if @product.comments.exists? %>
       <h6>Highest rating of the products: </h6>
-       <p><%= @product.first.highest_rating_comment.body %></p>
+      <div class="rated product-indent" data-score="<%= @product.highest_rating_comment.rating %>"></div>
+       <p>"<%= @product.highest_rating_comment.body%>"</p>
+       </div>
       <h6>Lowest rating of the products: </h6>
-        <p><%= @product.first.lowest_rating_comment.body %></p>
-         <hr>
+       <div class="rated product-indent" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
+       <p>"<%= @product.lowest_rating_comment.body%>"</p>
+        <hr>
          <% end %>
 
-        <div class="col-md-6">
+        <div class="col-12">
         <%= render 'new_comment' %>
+
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
 
-          <div class="col-md-6">
-          <%= render 'comments' %>
+          <div class="col-12">
+        <%= render partial: 'comments' %>
       </div>
    </div>
 </div>

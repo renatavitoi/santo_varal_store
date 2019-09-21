@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: { registrations: "user_registrations"}
-  resources :users
+
   resources :products do
-    resources :comments
-  end
+      resources :comments
+    end
+    
   resources :orders, only: [:index, :show, :create, :destroy]
 
   get 'simple_pages/about'
