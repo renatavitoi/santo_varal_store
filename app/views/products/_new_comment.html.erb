@@ -1,11 +1,9 @@
 <% if signed_in? %>
   <h4>Add a review:</h4>
   <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
-  <div class="row">
-    <div class="col-12">
       <div class="form-group">
       <%= form.label :body, "Comments" %><br>
-      <%= form.text_area :body, class: "form-control", placeholder: "Enter your comment", require: true %>
+      <%= form.text_area :body, rows: 5, class: "form-control", placeholder: "Enter your comment", require: true %>
     </p>
     <p>
       <div class="field">
@@ -16,8 +14,8 @@
     </p>
     <p>
       <div clas="action">
-      <%= form.submit "Submit", class: "form_label" %>
+      <%= form.submit "Submit", class: "form_label", disabled: true %>
     </div>
     </p>
+    <% end %>
   <% end %>
-<% end %>
