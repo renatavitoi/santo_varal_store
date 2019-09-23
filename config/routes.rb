@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :comments
     end
     
+  resources :users
+
   resources :orders, only: [:index, :show, :create, :destroy]
 
   get 'simple_pages/about'

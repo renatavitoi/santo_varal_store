@@ -1,45 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8">
+  <div class="container">
+   <div class="row">
+     <div class="col-md-8">
       <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image: "@product.image_url") %>
       <% cache @product do %>
       <p><strong>Name:</strong></p>
-      <%= @product.name %>
-        <hr>
-      <p><strong>Description:</strong></p>
-        <%= @product.description %>
+         <%= @product.name %>
+         <hr>
+       <p><strong>Description:</strong></p>
+         <%= @product.description %>
         <hr>
       <p><strong>Colour:</strong></p>
-        <%= @product.colour %>
+         <%= @product.colour %>
         <hr>
-      <p><strong>Price:</strong></p>
-        <%= @product.price %>
-        <% end %>
-        <hr>
-
-        <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-
-        <% if @product.comments.exists? %>
-      <h6>Highest rating of the products: </h6>
-      <div class="rated product-indent" data-score="<%= @product.highest_rating_comment.rating %>"></div>
-       <p>"<%= @product.highest_rating_comment.body%>"</p>
-       </div>
-      <h6>Lowest rating of the products: </h6>
-       <div class="rated product-indent" data-score="<%= @product.lowest_rating_comment.rating %>"></div>
-       <p>"<%= @product.lowest_rating_comment.body%>"</p>
-        <hr>
+       <p><strong>Price:</strong></p>
+         <%= number_to_currency(@product.price, :unit => "€") %>
          <% end %>
+         <hr>
+        </div>
+     </div>
 
-        <div class="col-12">
-        <%= render 'new_comment' %>
+      <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+        <% if @product.comments.exists? %>
+        
+           <h6>Highest rating of the products:</h6>
+           <p><%= @product.highest_rating_comment.body%></p>
+           <h6>Lowest rating of the products:</h6>
+          <p><%= @product.lowest_rating_comment.body%></p>
+         <hr>
+         </div>
+        <% end %>
+
+   <div class="comments">
+     <div>
+       <%= render "new_comment" %>
+       </div>
+       <div class="alert alert-info" style="display:none" role="alert">New comment was posted!</div>
+       <%= render 'comments' %>
+       </div>
+    </div>
+
 
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
 
-          <div class="col-12">
-        <%= render partial: 'comments' %>
-      </div>
-   </div>
-</div>
+</div> <!-- end of column-->
