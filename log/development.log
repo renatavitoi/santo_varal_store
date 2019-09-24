@@ -33332,3 +33332,120 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 125ms (Views: 102.1ms | ActiveRecord: 3.3ms)
 
 
+Started GET "/products" for ::1 at 2019-09-24 16:38:13 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (7.2ms)
+  Rendered products/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 113ms (Views: 104.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/simple_pages/about" for ::1 at 2019-09-24 16:38:14 +0200
+Processing by SimplePagesController#about as HTML
+  Rendering simple_pages/about.html.erb within layouts/application
+  Rendered simple_pages/about.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 168ms (Views: 165.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-24 16:38:16 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (12.1ms)
+  Rendered products/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 145ms (Views: 141.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-24 16:38:17 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 97ms (Views: 79.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-09-24 16:38:37 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q48wYHBtddIZ6myx+0UMb6/5xGqoOsSlbLPYyb/mMm0CIpXMmYyNCCjAC+lcTxE6inenmKne/QgV3APwzFJtsg==", "user"=>{"email"=>"renata_band@hotmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "renata_band@hotmail.com"], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 315ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-24 16:38:37 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+Completed 200 OK in 116ms (Views: 111.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for ::1 at 2019-09-24 16:38:39 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (5.4ms)
+  Rendered products/index.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:45
+Completed 200 OK in 308ms (Views: 302.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-24 16:38:41 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:22
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."product_id" = ? LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_new_comment.html.erb:1
+  Rendered products/_new_comment.html.erb (18.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.7ms)
+  Rendered products/show.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 84ms (Views: 77.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-09-24 16:38:47 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-09-24 16:38:47 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 316ms (Views: 311.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
