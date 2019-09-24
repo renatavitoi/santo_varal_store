@@ -32352,3 +32352,71 @@ Processing by SimplePagesController#landing_page as HTML
 Completed 200 OK in 260ms (Views: 254.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/products" for ::1 at 2019-09-24 09:42:02 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (8.0ms)
+  Rendered products/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 165ms (Views: 158.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products" for ::1 at 2019-09-24 10:25:51 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (6.7ms)
+  Rendered products/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 301ms (Views: 288.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-24 10:25:53 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/simple_pages/contact" for ::1 at 2019-09-24 10:25:55 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 357ms (Views: 353.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-24 10:25:55 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (6.6ms)
+  Rendered products/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 113ms (Views: 100.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-09-24 10:26:53 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (4.0ms)
+  Rendered products/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 1557ms (Views: 1539.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/products" for ::1 at 2019-09-24 10:26:57 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [9 times] (4.9ms)
+  Rendered products/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.2ms)
+
+
