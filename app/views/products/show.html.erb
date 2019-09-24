@@ -23,7 +23,7 @@
 
       <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
         <% if @product.comments.exists? %>
-        
+         <div class="productRating">
            <h6>Highest rating of the products:</h6>
            <p><%= @product.highest_rating_comment.body%></p>
            <h6>Lowest rating of the products:</h6>
