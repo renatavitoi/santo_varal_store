@@ -1,18 +1,19 @@
 <% if signed_in? %>
     <h4>Add a review:</h4>
-  <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
+  <%= form_for([@product, @product.comments.build], remote: true, local: true) do |f| %>
   <div class="form-group">
    <p>
     <%= f.label :body, "Comments" %><br>
-    <%= f.text_area :body, rows: 5, class: "form-control", placeholder: "Enter your comment", require: true %>
-   </P>
+    <%= f.text_area :body, rows: 5, placeholder: "Enter your comment", require: true %>
   </div>
-  <div class="field">
-    <div id="star-rating"></div>
-    </div>
+  <p>
+  <div class="rating">
+    <%= f.label :body, "Rating" %><br>
+  </div>
+  </p>
   <div class="action">
     <p>
-     <%= f.submit "Submit", class: "btn btn-primary", disabled: true %>
+     <%= f.button :submit %>
    </p>
   </div>
    <% end %>

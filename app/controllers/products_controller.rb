@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   def show
     @comments = @product.comments.order("created_at DESC")
   end
-  
+
   # GET /products/new
   def new
     @product = Product.new

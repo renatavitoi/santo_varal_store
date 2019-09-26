@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def create
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
@@ -7,8 +8,12 @@ class CommentsController < ApplicationController
     redirect_to product_path(@product)
   end
 
+
   def destroy
   end
+
+
+
 
 
 

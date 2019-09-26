@@ -1,4 +1,7 @@
-
-<%= comment.name %>
+<tr>
+<% @comments.each do |comment| %>
+<%= comment.user.first_name %>
 <%= comment.body %>
 <%= time_go_in_words(comments.created_at) %>
+<td>Avg Rating=<%= not sure here %></td>
+<tr>

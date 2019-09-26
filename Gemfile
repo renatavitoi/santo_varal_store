@@ -77,7 +77,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 
 #Ratings
-gem 'rating'
+gem 'ratyrate'
 
 #Safe_attributes
 gem 'safe_attributes'

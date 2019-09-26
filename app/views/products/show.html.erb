@@ -21,28 +21,16 @@
         </div>
      </div>
 
-      <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-        <% if @product.comments.exists? %>
-         <div class="productRating">
-           <h6>Highest rating of the products:</h6>
-           <p><%= @product.highest_rating_comment.body%></p>
-           <h6>Lowest rating of the products:</h6>
-          <p><%= @product.lowest_rating_comment.body%></p>
-         <hr>
-         </div>
-        <% end %>
-
    <div class="comments">
-     <div>
-       <%= render "new_comment" %>
-       </div>
-       <div class="alert alert-info" style="display:none" role="alert">New comment was posted!</div>
-       <%= render 'comments' %>
-       </div>
-    </div>
-
-
-        <%= link_to 'Edit', edit_product_path(@product) %> |
-        <%= link_to 'Back', products_path %>
-
+    <div>
+      <%= render 'comments' %>
+     </div>
+   </div>
+   <div class="alert alert-info" style="display:none" role="alert">New comment was posted!</div>
+      <%= render "new_comment" %>
+  </div>
 </div> <!-- end of column-->
+
+
+     <%= link_to 'Edit', edit_product_path(@product) %> |
+     <%= link_to 'Back', products_path %>

@@ -14,3 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.paths << Rails.root.join('node_modules', 'vendor/assets')
+
+Rails.application.config.assets.precompile += %w( public.css)
+
+Rails.application.config.assets.precompile += %w( ratyrate.js)

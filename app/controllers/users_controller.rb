@@ -24,12 +24,14 @@ class UsersController < ApplicationController
 
     # GET /users/1/edit
     def edit
+     @user = User.find(params[:id])
     end
 
     # POST /users
     # POST /users.json
     def create
       @user = User.new(user_params)
+  
 
       respond_to do |format|
        if @user.save
@@ -75,6 +77,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email)
+      params.require(:user).permit(:first_name, :last_name)
     end
 end
