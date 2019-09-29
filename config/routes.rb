@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "user_registrations"}
+  devise_for :users, controllers: { registrations: "user_registrations" }
 
   resources :products do
       resources :comments
     end
-    
-  resources :users
+
+resources :users
+
 
   resources :orders, only: [:index, :show, :create, :destroy]
 
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get 'products/index'
   get '/products/:users/1', to: 'products#show'
   get '/products', to: 'products#index'
+  get '/sign_out' => 'users/sessions#destroy'
 
   post 'simple_pages/thank_you'
 

@@ -16,7 +16,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-
     # GET /users/new
     def new
      @user = User.new #this creates a empty user object to be filled with signup data
@@ -24,14 +23,15 @@ class UsersController < ApplicationController
 
     # GET /users/1/edit
     def edit
-     @user = User.find(params[:id])
-    end
+   redirect_to edit_user_registration_path
+ end
+
 
     # POST /users
     # POST /users.json
     def create
       @user = User.new(user_params)
-  
+
 
       respond_to do |format|
        if @user.save
@@ -73,10 +73,10 @@ private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
-  end
+end
 
   # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:first_name, :last_name)
     end
-end
+  end
