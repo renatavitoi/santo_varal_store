@@ -45186,3 +45186,14 @@ Completed 200 OK in 280ms (Views: 254.9ms | ActiveRecord: 2.8ms)
 
 =======
 >>>>>>> 6482d6a930e17eb2bd55d2247b892dffb105a7da
+Started GET "/" for ::1 at 2019-09-30 11:39:59 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/renatavitoi/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 2847ms (Views: 2819.3ms | ActiveRecord: 2.3ms)
+
+
