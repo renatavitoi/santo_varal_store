@@ -45197,3 +45197,49 @@ Processing by SimplePagesController#landing_page as HTML
 Completed 200 OK in 2847ms (Views: 2819.3ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/simple_pages/contact" for ::1 at 2019-09-30 13:37:03 +0200
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 260ms (Views: 253.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-09-30 13:37:06 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered collection of products/_product.html.erb [9 times] (9.0ms)
+  Rendered products/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 98ms (Views: 84.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for ::1 at 2019-09-30 13:47:25 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_comments.html.erb:10
+  Rendered products/_comments.html.erb (84.1ms)
+  Rendered products/_new_comment.html.erb (4.2ms)
+  Rendered products/show.html.erb within layouts/application (103.8ms)
+Completed 200 OK in 577ms (Views: 377.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-09-30 13:47:30 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 111ms (Views: 105.6ms | ActiveRecord: 0.0ms)
+
+
