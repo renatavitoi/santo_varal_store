@@ -5,8 +5,8 @@
         <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
          <ul>
       <% @product.errors.full_messages.each do |message| %>
-       <li><%= message %></li>
-     <% end %>
+        <li><%= message %></li>
+      <% end %>
       </ul>
     </div>
    <% end %>
@@ -19,7 +19,7 @@
   <div class="field">
     <label for="name">Name</label>
     <input id="product_name" type="text" name="name">
-</div>
+  </div>
 
   <div class="field">
     <%= f.label :description %><br>
@@ -36,13 +36,13 @@
     <%= f.text_field :colour %>
   </div>
 
- <div class="field">
-  <%= f.label :price %><br>
-  <%= f.text_field :price %>
- </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
 
   <div class="actions">
-   <%= f.submit "Send", class: "form_label" %>
- </div>
+     <%= f.submit "Send", class: "form_label" %>
+  </div>
 
- <% end %>
+  <% end %>
