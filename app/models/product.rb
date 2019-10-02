@@ -1,10 +1,8 @@
 class Product < ApplicationRecord
+  validates :name, presence: true #Adds validation to the Product model。
 
 	has_many :orders
 	has_many :comments
-
-
-
 
 
 	def self.search(search_term)
