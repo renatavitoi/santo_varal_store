@@ -808,3 +808,142 @@ Processing by SimplePagesController#landing_page as HTML
 Completed 200 OK in 90ms (Views: 82.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/products" for ::1 at 2019-10-02 07:18:50 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered collection of products/_product.html.erb [9 times] (10.1ms)
+  Rendered products/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 329ms (Views: 313.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-10-02 08:06:41 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 266ms (Views: 257.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-10-02 10:10:26 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 563ms (Views: 519.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-10-02 15:54:27 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (6.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (200.0ms)
+Completed 500 Internal Server Error in 467ms (ActiveRecord: 8.5ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after ".": expected "{", was ""):
+     8:     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     9:         rel="stylesheet">
+    10:     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    11:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+    12: 
+    13:     <%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
+    14:     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  
+app/assets/stylesheets/products.scss:33
+app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__223025413981309458_70348735550940'
+Started GET "/" for ::1 at 2019-10-02 15:57:20 +0200
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/views/simple_pages/landing_page.html.erb:12
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 87ms (Views: 82.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2019-10-02 15:57:49 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered collection of products/_product.html.erb [9 times] (7.2ms)
+  Rendered products/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 159ms (Views: 141.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for ::1 at 2019-10-02 15:57:51 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_comments.html.erb:11
+  Rendered products/_comments.html.erb (37.3ms)
+  Rendered products/_new_comment.html.erb (1.0ms)
+  Rendered products/show.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 136ms (Views: 112.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/products/1/edit" for ::1 at 2019-10-02 15:57:54 +0200
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (11.9ms)
+  Rendered products/edit.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 106ms (Views: 101.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/products/1" for ::1 at 2019-10-02 15:57:56 +0200
+Processing by ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tRFu+daR4KOIXH6Quy9r/XHVulEP5BDlQYRbpeG5lAe4T+clHpcu0M5yxULNzbbdyEYRKwdrHvjkk0YjHPMTZw==", "product"=>{"name"=>" Eyeshadow Pallet", "description"=>"Colourful Eyeshadow Pallet", "image_url"=>"https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", "colour"=>"Purple, Rose, Brown, Bronze", "price"=>""}, "name"=>"", "commit"=>"Send", "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+Unpermitted parameter: :price
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:52
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:52
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.3ms)
+  Rendered products/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 92ms (Views: 77.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for ::1 at 2019-10-02 15:57:59 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:76
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/products/_comments.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/views/products/_comments.html.erb:11
+  Rendered products/_comments.html.erb (12.6ms)
+  Rendered products/_new_comment.html.erb (1.1ms)
+  Rendered products/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 105ms (Views: 96.3ms | ActiveRecord: 2.0ms)
+
+
