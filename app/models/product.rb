@@ -3,13 +3,10 @@ class Product < ApplicationRecord
 	has_many :comments
 
   validates :name, presence: true #Adds validation to the Product model。
-  validates :body, presence: true
-  validates :user, presence: true
-  validates :product, presence: true
-  validates :image_url, presence: true
-  validates :colour, presence: true 
   validates :description, presence: true
-  validates :price, presence: true
+  validates :image_url, presence: true
+  validates :colour, presence: true
+  validades :price, presence: true
   validates :rating, numericality: { only_integer: true }
 
 
