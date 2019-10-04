@@ -1342,3 +1342,51 @@ Processing by SimplePagesController#landing_page as HTML
 Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/products" for ::1 at 2019-10-04 06:39:54 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered collection of products/_product.html.erb [9 times] (5.8ms)
+  Rendered products/index.html.erb within layouts/application (33.2ms)
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:46
+Completed 200 OK in 395ms (Views: 366.1ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/products/new" for ::1 at 2019-10-04 06:40:00 +0200
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (9.1ms)
+  Rendered products/new.html.erb within layouts/application (17.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:46
+Completed 200 OK in 398ms (Views: 392.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products" for ::1 at 2019-10-04 06:40:03 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fiJT4gLyXWHvVtR784/WktFeM92qrDCG2kTLh6Il1BaojMzbTWCRxlfvwtKJG7PDnNwpZPFVjyNMxuc/Y9wtzQ==", "product"=>{"name"=>"", "description"=>"", "image_url"=>"", "colour"=>"", "price"=>""}, "name"=>"", "commit"=>"Send"}
+Unpermitted parameter: :price
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:36
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (11.3ms)
+  Rendered products/new.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:46
+Completed 200 OK in 121ms (Views: 102.9ms | ActiveRecord: 0.4ms)
+
+
