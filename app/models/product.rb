@@ -1,15 +1,14 @@
 class Product < ApplicationRecord
-
 	has_many :orders
 	has_many :comments
 
+  validates :name, presence: true #Adds validation to the Product model。
+  validates :description, presence: true
+  validates :image_url, presence: true
+  validates :colour, presence: true
+  validades :price, presence: true
+  validates :rating, numericality: { only_integer: true }
 
-  validates :name, presence: true
-	validates :description, presence: true
-	validates :body, presence: true
-	validates :user, presence: true
-	validates :product, presence: true
-	validates :rating, numericality: { only_integer: true }
 
 
 	def self.search(search_term)
