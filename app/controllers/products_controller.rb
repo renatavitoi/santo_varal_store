@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /products
   # GET /products.json
@@ -16,9 +17,9 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
-  # GET /products/new
   def new
     @product = Product.new
   end
@@ -55,10 +56,11 @@ class ProductsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
-        redirect_to "/simple_pages/landing_page"
     end
   end
 end
+
+
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy

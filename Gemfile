@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.1'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -72,3 +72,18 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise
 gem 'devise'
+
+#Cancancan
+gem 'cancancan', '~> 1.10'
+
+#Ratings
+gem 'ratyrate'
+
+#Safe_attributes
+gem 'safe_attributes'
+
+## Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.1.1'
+
+# FontAwesome::Sass
+gem 'font-awesome-sass', '~> 5.11.2'
