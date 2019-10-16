@@ -84,3 +84,6 @@ gem 'safe_attributes'
 
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.1'
+
+# FontAwesome::Sass
+gem 'font-awesome-sass', '~> 5.11.2'
