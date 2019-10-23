@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="container">
+   <div class="row">
+     <div class="col-md-8">
+      <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image: "@product.image_url") %>
+      <% cache @product do %>
+      <p><strong>Name:</strong></p>
+         <%= @product.name %>
+         <hr>
+       <p><strong>Description:</strong></p>
+         <%= @product.description %>
+        <hr>
+      <p><strong>Colour:</strong></p>
+         <%= @product.colour %>
+        <hr>
+       <p><strong>Price:</strong></p>
+         <%= number_to_currency(@product.price, :unit => "€") %>
+         <% end %>
+         <hr>
+        </div>
+     </div>
+
+   <div class="comments">
+    <div>
+      <%= render 'comments' %>
+     </div>
+   </div>
+   <div class="alert alert-info" style="display:none" role="alert">New comment was posted!</div>
+      <%= render "new_comment" %>
+  </div>
+</div> <!-- end of column-->
+
+
+     <%= link_to 'Edit', edit_product_path(@product) %> |
+     <%= link_to 'Back', products_path %>
