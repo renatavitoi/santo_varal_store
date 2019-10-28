@@ -1,0 +1,30 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.container-fluid {
+  margin-botton: 25px,
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+}
+
+.productName {
+  font-size: 3em;
+  padding-top: 30px;
+}
+
+.body {
+  padding: 30px;
+  botton: 20px;
+}
+
+.averageRating {
+  font-size: 1.5em;
+  font-style: verdana;
+}
