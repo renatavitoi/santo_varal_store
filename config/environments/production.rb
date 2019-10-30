@@ -96,6 +96,4 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options  = { host: 'stormy-wave-75463.herokuapp.com' }
-  config.action_cable.allowed_request_origins =  ['http://stormy-wave-75463.herokuapp.com', 'http://stormy-wave-75463.herokuapp.com']
-  config.action_controller.relative_url_root  = "/http://stormy-wave-75463.herokuapp.com"
 end
