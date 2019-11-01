@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     else
     @products = Product.all
    end
- end
+ end 
 
   # GET /products/1
   # GET /products/1.json

@@ -52,25 +52,22 @@
             <%= link_to "Sign in", new_user_session_path %>
             <% end %>
             <li>
-            <form role="form" class="form-inline">
-                <%= form_with(url: products_path, method: 'get', local:true) do |form| %>
-                <%= form.label :q, 'Search for:' %>
-                <%= form.text_field :q, id: 'q', value:params[:q] %>
-                <%= form.submit 'Search' %>
-              </form>
-              <% end %>
+              <%= form_with(url: products_path, method: 'get', local:true, :html => {:class => 'form-inline', 'role' => 'form'}) do |form| %>
+              <%= form.label :q, 'Search for:' %>
+              <%= form.text_field :q, id: 'q', value:params[:q] %>
+              <%= form.submit 'Search' %>
+            <% end %>
             </li>
           </ul>
         </nav> <!-- end nav container -->
-
-        <div class="container">
+      <div class="container">
         <% if notice %>
           <p id="notice" class="alert alert-primary"><%= notice %></p>
         <% end %>
         <% if alert %>
         <p class="alert alert-danger alert-note" role="alert"><%= alert %></p>
         <% end %>
-        </div>
+      </div>
 
       <%= yield %>
 
