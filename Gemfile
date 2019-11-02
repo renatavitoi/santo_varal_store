@@ -89,3 +89,6 @@ gem 'will_paginate', '~> 3.1.1'
 
 # FontAwesome
 gem "font-awesome-rails"
+
+#Rspec
+gem 'rspec', '~> 3.0'
