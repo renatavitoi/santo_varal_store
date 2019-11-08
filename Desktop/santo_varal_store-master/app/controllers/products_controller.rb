@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /products
   # GET /products.json
@@ -16,9 +17,9 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
-  # GET /products/new
   def new
     @product = Product.new
   end
@@ -31,8 +32,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
+
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
@@ -55,10 +56,11 @@ class ProductsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
-        redirect_to "/simple_pages/landing_page"
     end
   end
 end
+
+
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
@@ -77,6 +79,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :color, :colour)
+      params.require(:product).permit(:name, :description, :image_url, :color, :colour, :price)
     end
 end
