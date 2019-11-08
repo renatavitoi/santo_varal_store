@@ -3,11 +3,6 @@ class Product < ApplicationRecord
 	has_many :comments, dependent: :destroy
 
   validates :name, presence: true #Adds validation to the Product model。
-  validates :description, presence: true
-  validates :image_url, presence: true
-  validates :colour, presence: true
-	validates :price, presence: true
-
 
 	def self.search(search_term)
 		if Rails.env.production? # use "ilike" matching operator for postgres to ignore upper- and lower-case
