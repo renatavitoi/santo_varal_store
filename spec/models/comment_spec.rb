@@ -18,6 +18,13 @@ describe Comment do
       expect(comments[1].rating).to eq 5
       expect(comments[2].rating).to eq 1
     end
+
+    it "returns all comments order by rating_asc" do
+      comments = Comment.rating_asc();
+      expect(comments[0].rating).to eq 1
+      expect(comments[1].rating).to eq 5
+      expect(comments[2].rating).to eq 9
+    end
     
   end
 
