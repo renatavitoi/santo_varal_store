@@ -23,6 +23,12 @@ describe Product do
       expect(comment.rating).to eq expected
     end
 
+    it "returns the lowest rating comment" do
+      expected = 1
+      comment = product.lowest_rating_comment();
+      expect(comment.rating).to eq expected
+    end
+
   end
 
   context "when the product has only description" do
