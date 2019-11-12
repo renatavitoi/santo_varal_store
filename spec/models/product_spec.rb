@@ -16,6 +16,19 @@ describe Product do
       average = product.average_rating()
       expect(average).to eq expected
     end
+
+    it "returns the highst rating comment" do
+      expected = 5
+      comment = product.highest_rating_comment();
+      expect(comment.rating).to eq expected
+    end
+
+    it "returns the lowest rating comment" do
+      expected = 1
+      comment = product.lowest_rating_comment();
+      expect(comment.rating).to eq expected
+    end
+
   end
 
   context "when the product has only description" do
