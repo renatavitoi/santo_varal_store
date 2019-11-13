@@ -19,6 +19,7 @@ describe UsersController, type: :controller do
     context 'when a user is not logged in' do  
       it 'redirects to main app root url' do
         get :show, params: { id: user.id }
+        expect(response).to be_present # Be the same thing that expect(response).to have_http_status(302)
         expect(response).to redirect_to(root_url)
       end
     end
