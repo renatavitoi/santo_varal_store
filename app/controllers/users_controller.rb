@@ -3,29 +3,16 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   load_and_authorize_resource
   
-  
   # GET /users
   # GET /users.json
   def index
     @users = User.all
   end
   
-  # GET /users/1
-  # GET /users/1.json
-  def show
-    @user = User.find(params[:id])
-  end
-  
   # GET /users/new
   def new
     @user = User.new #this creates a empty user object to be filled with signup data
   end
-  
-  # GET /users/1/edit
-  def edit
-    redirect_to edit_user_registration_path
-  end
-  
   
   # POST /users
   # POST /users.json
@@ -42,6 +29,11 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  # GET /users/1/edit
+  def edit
+    redirect_to edit_user_registration_path
+  end
   
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -56,6 +48,12 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  # GET /users/1
+  # GET /users/1.json
+  def show
+    @user = User.find(params[:id])
+  end
   
   # DELETE /users/1
   # DELETE /users/1.json
@@ -66,7 +64,6 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
   
   private
   # Use callbacks to share common setup or constraints between actions.
