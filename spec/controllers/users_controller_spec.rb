@@ -53,7 +53,48 @@ describe UsersController, type: :controller do
   end
 
   describe 'User signed out' do
+    let(:userdefault) { User.create!(email: 'admin@example.com', password: '1234567890') }
     
+    it 'GET #index' do
+      get :index
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(root_url)
+    end
+
+    it 'GET #new' do
+      get :new
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'POST #create' do
+      post :create, params: { user: { first_name: '', last_name: '', email: '', password: '' } }
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'GET #edit' do
+      get :edit, params: { id: userdefault.id }
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'PUT #update' do
+      put :update, params: { id: userdefault.id, user: { first_name: 'Jhon' } }
+      expect(response).to have_http_status(302)
+    end
+
+    it 'GET #show' do
+      get :show, params: { id: userdefault.id }
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(root_url)
+    end
+
+    it 'DELETE #destroy' do
+      delete :destroy, params: { id: userdefault.id }
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(new_user_session_path)
+    end
   end
 
   # describe 'User admin signed in' do
