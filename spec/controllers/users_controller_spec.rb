@@ -9,164 +9,184 @@ describe UsersController, type: :controller do
       sign_in userdefault
     end
 
-    it 'GET #index' do
-      get :index
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(root_url)
+    describe 'GET #index' do 
+      it 'redirect to root_url' do
+        get :index
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_url)
+      end
     end
 
-    it 'GET #new' do
-      get :new
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(root_url)
+    describe 'GET #new' do 
+      it 'redirect to root_url' do
+        get :new
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_url)
+      end
     end
 
-    it 'POST #create' do
-      post :create, params: { user: { first_name: '', last_name: '', email: '', password: '' } }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(root_url)
+    describe 'POST #create' do 
+      it 'redirect to root_url' do
+        post :create, params: { user: { first_name: '', last_name: '', email: '', password: '' } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_url)
+      end
     end
 
-    it 'GET #edit' do
-      get :edit, params: { id: userdefault.id }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(edit_user_registration_path)
+    describe 'GET #edit' do 
+      it 'redirect to edit_user' do
+        get :edit, params: { id: userdefault.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(edit_user_registration_path)
+      end
     end
 
-    it 'PUT #update' do
-      put :update, params: { id: userdefault.id, user: { first_name: 'Jhon' } }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(user_path(userdefault))
+    describe 'PUT #update' do 
+      it 'return user' do
+        put :update, params: { id: userdefault.id, user: { first_name: 'Jhon' } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(user_path(userdefault))
+      end
     end
 
-    it 'GET #show' do
-      get :show, params: { id: userdefault.id }
-      expect(assigns(:user)).to_not be_nil
-      expect(assigns(:user)).to eq userdefault
+    describe 'GET #show' do 
+      it 'returns user' do
+        get :show, params: { id: userdefault.id }
+        expect(assigns(:user)).to_not be_nil
+        expect(assigns(:user)).to eq userdefault
+      end
     end
 
-    it 'DELETE #destroy' do
-      delete :destroy, params: { id: userdefault.id }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(root_url)
+    describe 'DELETE #destroy' do 
+      it 'redirect to root_url' do
+        delete :destroy, params: { id: userdefault.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_url)
+      end
     end
   end
 
   describe 'User signed out' do
     let(:userdefault) { User.create!(email: 'admin@example.com', password: '1234567890') }
     
-    it 'GET #index' do
-      get :index
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(root_url)
+    describe 'GET #index' do 
+      it 'redirect to root url' do
+        get :index
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_url)
+      end
     end
 
-    it 'GET #new' do
-      get :new
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(new_user_session_path)
+    describe 'GET #new' do 
+      it 'redirect to signin' do
+        get :new
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
 
-    it 'POST #create' do
-      post :create, params: { user: { first_name: '', last_name: '', email: '', password: '' } }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(new_user_session_path)
+    describe 'POST #create' do 
+      it 'redirect to signin' do
+        post :create, params: { user: { first_name: '', last_name: '', email: '', password: '' } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
 
-    it 'GET #edit' do
-      get :edit, params: { id: userdefault.id }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(new_user_session_path)
+    describe 'GET #edit' do 
+      it 'redirect to signin' do
+        get :edit, params: { id: userdefault.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
 
-    it 'PUT #update' do
-      put :update, params: { id: userdefault.id, user: { first_name: 'Jhon' } }
-      expect(response).to have_http_status(302)
+    describe 'PUT #update' do 
+      it 'redirect to signin' do
+        put :update, params: { id: userdefault.id, user: { first_name: 'Jhon' } }
+        expect(response).to have_http_status(302)
+      end
     end
 
-    it 'GET #show' do
-      get :show, params: { id: userdefault.id }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(root_url)
+    describe 'GET #show' do 
+      it 'redirect to root_url' do
+        get :show, params: { id: userdefault.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_url)
+      end
     end
 
-    it 'DELETE #destroy' do
-      delete :destroy, params: { id: userdefault.id }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to(new_user_session_path)
+    describe 'DELETE #destroy' do 
+      it 'redirect to signin' do
+        delete :destroy, params: { id: userdefault.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
   end
 
-  # describe 'User admin signed in' do
-  #   let(:admin) { User.create!(email: 'admin@example.com', password: '1234567890') }
+  describe 'User admin signed in' do
+    let(:admin) { User.create!(email: 'admin@example.com', password: '1234567890', admin: true) }
 
-  #   before do
-  #     sign_in admin
-  #   end
+    before do
+      sign_in admin
+    end
 
-  #   context '' do
-  #     it '' do
-        
-  #     end
-  #   end
-  # end
-  
-  # describe 'GET #index' do
-  #   let(:admin) { User.create!(email: 'admin@example.com', password: '1234567890') }
+    describe 'GET #index' do 
+      it 'returns all users' do
+        get :index
+        expect(response).to have_http_status(200)
+        expect(assigns(:users).empty?).to be false 
+      end
+    end
 
-  #   before do
-  #     sign_in admin
-  #   end
+    describe 'GET #new' do 
+      it 'returns new user' do
+        get :new
+        expect(response).to have_http_status(200)
+        expect(assigns(:user)).to_not be_nil
+      end
+    end
 
-  #   context 'all' do
-  #     it 'returns all users' do
-  #       get :index
-  #       puts response.body.inspect
-  #     end
-  #   end
-  # end
+    describe 'POST #create' do 
+      it 'creates new user' do
+        post :create, params: { user: { first_name: 'jhon', last_name: 'due', email: 'jhon@example.com', password: 'password' } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(user_path(assigns(:user)))
+      end
+    end
 
-  # describe 'POST #create signed as admin' do 
-  #   let(:admin) { User.create!(email: 'admin@example.com', password: '1234567890', admin: true) }
+    describe 'GET #edit' do 
+      it 'redirects to registration_path' do
+        get :edit, params: { id: admin.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(edit_user_registration_path)
+      end
+    end
 
-  #   before do
-  #     sign_in admin
-  #   end
-    
-  #   context 'when a user have first_name last_name email and password' do 
-  #     let(:user) { User.new(first_name: 'Peter', last_name: 'Example', email: 'peter@example.com', password: '1234567890') }
+    describe 'PUT #update' do 
+      it 'updates user' do
+        put :update, params: { id: admin.id, user: { first_name: 'james' } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(user_path(admin))
+        expect(assigns(:user)).to eq admin
+      end
+    end
 
-  #     it "creates an user and redirect to user view" do
-  #       post :create, params: { user: { first_name: user.first_name, last_name: user.last_name, email: user.email, password: user.password } }
-  #       expect(assigns(:user)).to_not be_nil
-  #       expect(response).to redirect_to user_path(assigns(:user))
-  #     end
-      
-  #   end
-  # end
+    describe 'GET #show' do 
+      it 'return user' do
+        get :show, params: { id: admin.id }
+        expect(assigns(:user)).to_not be_nil
+        expect(assigns(:user)).to eq admin
+      end
+    end
 
-  # describe 'GET #show' do
-  #   let(:user) { User.create!(email: 'peter@example.com', password: '1234567890') }
-
-  #   context 'when a user is logged in' do
-  #     before do
-  #       sign_in user
-  #     end
-
-  #     it "loads correct user details" do
-  #       get :show, params: { id: user.id }
-  #       expect(response).to be_ok
-  #       expect(assigns(:user)).to eq user
-  #     end
-  #   end
-
-  #   context 'when a user is not logged in' do  
-  #     it 'redirects to main app root url' do
-  #       get :show, params: { id: user.id }
-  #       expect(response).to be_present # Be the same thing that expect(response).to have_http_status(302)
-  #       expect(response).to redirect_to(root_url)
-  #     end
-  #   end
-
-  # end
+    describe 'DELETE #destroy' do 
+      it 'destroys user' do
+        delete :destroy, params: { id: admin.id }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(users_path)
+      end
+    end
+  end
 end
