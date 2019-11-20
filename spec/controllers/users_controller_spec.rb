@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UsersController, type: :controller do
   
   describe 'User default signed in' do
-    let(:userdefault) { User.create!(email: 'admin@example.com', password: '1234567890') }
+    let(:userdefault) { FactoryBot.create(:user) }
 
     before do
       sign_in userdefault
@@ -67,7 +67,7 @@ describe UsersController, type: :controller do
   end
 
   describe 'User signed out' do
-    let(:userdefault) { User.create!(email: 'admin@example.com', password: '1234567890') }
+    let(:userdefault) { FactoryBot.create(:user) }
     
     describe 'GET #index' do 
       it 'redirect to root url' do
