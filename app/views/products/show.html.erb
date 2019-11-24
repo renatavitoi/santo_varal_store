@@ -21,6 +21,10 @@
         </div>
      </div>
 
+     <%= form_with(url: '/payments/create') do |form| %>
+       <%= render partial: "shared/stripe_checkout_button" %>
+     <% end %>
+
    <div class="comments">
     <div>
       <%= render 'comments' %>

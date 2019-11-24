@@ -1,0 +1,8 @@
+<script
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  class="stripe-button"
+  data-image="/square-image.png"
+  data-name="<%= @product.name %>"
+  data-description="<%= @product.description %>"
+  data-amount="<%= @product.price * 100.to_i %>">
+</script>

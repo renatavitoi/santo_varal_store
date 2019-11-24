@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Comment do
-  
+
   context "when the comment has user, product and body" do
     let(:product) { Product.create!(name: "race bike") }
     let(:user) { User.create!(email: "santovaralstore@gmail.com", password: "password") }
@@ -11,6 +11,7 @@ describe Comment do
       Comment.create!(user: user, product: product, body: "great!", rating: 9)
       Comment.create!(user: user, product: product, body: "great!", rating: 5)
     end
+
 
     it "returns all comments order by rating_desc" do
       comments = Comment.rating_desc();
@@ -25,7 +26,7 @@ describe Comment do
       expect(comments[1].rating).to eq 5
       expect(comments[2].rating).to eq 9
     end
-    
+
   end
 
   context "when the Comment is be constructed without user, product and body" do

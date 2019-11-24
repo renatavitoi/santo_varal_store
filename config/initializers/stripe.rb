@@ -1,0 +1,14 @@
+
+if Rails.env.production?
+  Rails.configuration.stripe = {
+    publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
+    secret_key: ENV['STRIPE_SECRET_KEY']
+  }
+else
+  Rails.configuration.stripe = {
+    publishable_key: 'pk_test_GI3R2kPRhVPDNRosnNAvl3QW00qHzTBKXM',
+    secret_key: 'sk_test_8WOVAdY2wIqEAqhk9lNeaehU00EPAhiPxo'
+  }
+end
+
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
