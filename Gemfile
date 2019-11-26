@@ -98,4 +98,4 @@ gem 'will_paginate', '~> 3.1.1'
 gem "font-awesome-rails"
 
 # Stripe
-gem "stripe"
+gem 'stripe'
