@@ -7,7 +7,6 @@ class Product < ApplicationRecord
 	validates :name, presence: true
 	validates :colour, presence: true
 	validates :price, presence: true
-	validates :rating, numericality: { only_integer: true }
 
 	def self.search(search_term)
 		if Rails.env.production? # use "ilike" matching operator for postgres to ignore upper- and lower-case
