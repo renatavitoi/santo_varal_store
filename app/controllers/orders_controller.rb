@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-    load_and_authorize_resource
+  load_and_authorize_resource
   before_action :authenticate_user!
 
   def index
@@ -14,9 +14,15 @@ class OrdersController < ApplicationController
   end
 
   def create
-  end
+    @order = Order.new(params[:order])
+    if @order.save
+      UserMailer.order_confirmation(@order, @user).deliver
+      redirect_to @user, notice: "Order Completed Successfully"
+    else
+      render :new
+    end
 
-  def destroy
+    def destroy
+    end
+
   end
-  
-end
