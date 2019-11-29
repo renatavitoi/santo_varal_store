@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby gem '2.6.5'
 
+ruby ' 2.6.5'
+gem "rubyzip", ">= 1.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
@@ -95,7 +96,7 @@ gem 'safe_attributes'
 gem 'will_paginate', '~> 3.1.1'
 
 # FontAwesome
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Stripe
 gem 'stripe'
