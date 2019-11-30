@@ -15,7 +15,7 @@ get 'simple_pages/contact'
 get 'simple_pages/index'
 get 'simple_pages/landing_page'
 get '/products/:users/1', to: 'products#show'
-get 'products/index' => 'my_controller#my_action'
+get 'products/index'
 get 'product', to: 'products#index'
 get '/sign_out' => 'users/sessions#destroy'
 

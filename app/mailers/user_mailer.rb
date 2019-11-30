@@ -12,11 +12,11 @@ class UserMailer < ApplicationMailer
       @appname = "Santo Varal Store"
       mail(to: user.email,
         subject: "Welcome to #{@appname}!")
+      end
 
-        def payment_confirmation(user,order)
-          @user = user
-          @order = order
-          mail(to: user.email, subject: "Order has been received")
-        end
+      def payment_confirmation(user, order)
+        @user = user
+        @order = order
+        mail(to: user.email, subject: "We've successfully processed your payment")
       end
     end
