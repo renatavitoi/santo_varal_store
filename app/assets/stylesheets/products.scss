@@ -4,27 +4,40 @@
 
 
 
-
 .container-fluid {
   margin-botton: 25px,
 }
 
-.productImage {
+.img {
   width: 100%;
   height: auto;
 }
 
-.productName {
+.strong {
+  font-weight: border;
   font-size: 3em;
   padding-top: 30px;
 }
 
-.body {
+body {
   padding: 30px;
   botton: 20px;
+  margin: 33,333333%;
 }
 
-.averageRating {
-  font-size: 1.5em;
-  font-style: verdana;
+.rating > label {
+  float: left;
+  height: 6px;
+  margin: 0px;
+  padding-bottom: 0 10px;
+  font-size: 15px;
+  position: relative;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.button {
+  padding: 20px;
 }

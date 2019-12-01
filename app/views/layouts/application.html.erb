@@ -16,13 +16,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 </head>
 <body>
-
-  <%= flash[:notice] %>
 
   <!-- Navbar band -->
   <nav class="navbar navbar-expand-lg-right navbar-light bg-light">
@@ -62,10 +59,9 @@
           </nav> <!-- end nav container -->
           <div class="container">
             <% if notice %>
-            <p id="notice" class="alert alert-success" role="alert"><%= notice %></p>
-            <% end %>
-            <% if alert %>
-            <p class="alert alert-danger" role="alert"><%= alert %></p>
+            <p class="alert alert-success"><%= notice %></p>
+            <% elsif alert %>
+            <p class="alert alert-danger"><%= alert %></p>
             <% end %>
           </div>
 
