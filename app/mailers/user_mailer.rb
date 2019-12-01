@@ -19,7 +19,4 @@ class UserMailer < ApplicationMailer
         @user = user
         mail(to: user.email, subject: "We've successfully processed your payment")
       end
-
-      def deliver!(mail=@mail)
-      end
     end
