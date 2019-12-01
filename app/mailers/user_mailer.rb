@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+
   default from: "santovaralstore@gmail.com"
 
   def contact_form(name, email, message)
@@ -14,9 +15,11 @@ class UserMailer < ApplicationMailer
         subject: "Welcome to #{@appname}!")
       end
 
-      def payment_confirmation(user, order)
+      def payment_confirmation(user)
         @user = user
-        @order = order
         mail(to: user.email, subject: "We've successfully processed your payment")
+      end
+
+      def deliver!(mail=@mail)
       end
     end

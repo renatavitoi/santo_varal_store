@@ -18,16 +18,15 @@ class PaymentsController < ApplicationController
 
       if charge.paid
         Order.create(product_id: @product.id, user_id: @user.id, total: @product.price)
-        #flash[:success] = "You have successfully paid for your order!"
-        UserMailer.payments_confirmation_email(@user, @order).deliver_now
+        flash[:success] = "You have successfully paid for your order!"
       end
 
-    rescue Stripe::CardError => e
-      # The card has been declined
-      body = e.json_body
-      err = body[:error]
-      flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
-    end
-    redirect_to product_path(@product)
+  rescue Stripe::CardError => e
+    # The card has been declined
+    body = e.json_body
+    err = body[:error]
+    flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
+  end
+  redirect_to product_path(@product)
   end
 end
