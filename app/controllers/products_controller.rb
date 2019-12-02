@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    byebug
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
