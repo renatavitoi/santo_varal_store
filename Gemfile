@@ -98,3 +98,6 @@ gem 'font-awesome-rails'
 
 # Stripe
 gem 'stripe'
+
+# Brakeman
+gem 'brakeman'
