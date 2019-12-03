@@ -1,4 +1,3 @@
-
 <% if signed_in? %>
     <h4>Add a review:</h4>
   <%= form_for([@product, @product.comments.build], remote: true, local: true) do |f| %>
@@ -19,6 +18,3 @@
   </div>
    <% end %>
 <% end %>
-
-
-<script>alert('Hello');</<script>
