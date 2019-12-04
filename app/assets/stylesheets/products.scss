@@ -8,18 +8,17 @@
   margin-botton: 25px,
 }
 
-.img {
+.image {
   width: 100%;
   height: auto;
-  
-  width: 150px;
-}
-
-.strong {
-  font-weight: border;
   font-size: 3em;
   padding-top: 30px;
+  border-color: grey;
+  margin: 5px;
+  padding: 5px
 }
+
+.groove { border-style: groove; }
 
 body {
   padding: 30px;
