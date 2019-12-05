@@ -19,12 +19,21 @@
   padding-top: 30px;
 }
 
-.body {
+body {
   padding: 30px;
   botton: 20px;
 }
 
-.averageRating {
-  font-size: 1.5em;
-  font-style: verdana;
+
+img {
+  border: 1px solid grey;
+}
+
+.rating > label {
+  float: left;
+  height: 0;
+  margin: 0;
+  font-size: 1em;
+  position: relative;
+  width: 33,333333%;
 }

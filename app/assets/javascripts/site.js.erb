@@ -18,6 +18,14 @@ $(document).on('turbolinks:load', function(){
 });
 
 
-//Alert
-  $(".alert").delay(3000).slideUp(500, function(){
+
+$(document).on('turbolinks:load', function () {
+
+    refreshRating();
+
+    // ALERT Fadeout
+    $(".alert").delay(5000).fadeOut(2000)
+
+    //ElevateZoom JS
+    $('.img-zoom').elevateZoom();
 });
