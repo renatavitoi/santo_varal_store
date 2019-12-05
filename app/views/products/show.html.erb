@@ -23,12 +23,10 @@
   <div id="rating1"><%= render partial: "shared/rating" %></div>
   <div id="rating2"></div>
   <hr>
-
   <%= form_with(url: '/payments/create') do |form| %>
   <%= hidden_field_tag(:product_id, @product.id) %>
   <%= render partial: "shared/stripe_checkout_button" %>
   <% end %>
-
   <div class="comments">
     <div>
       <%= render 'comments' %>

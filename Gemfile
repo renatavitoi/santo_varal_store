@@ -84,7 +84,7 @@ gem "devise", ">= 4.7.1"
 #Cancancan
 gem 'cancancan', '~> 1.10'
 
-#Ratings
+# Ratyrate
 gem 'ratyrate'
 
 #Safe_attributes
@@ -94,7 +94,7 @@ gem 'safe_attributes'
 gem 'will_paginate', '~> 3.1.1'
 
 # FontAwesome
-gem 'font-awesome-rails'
+gem "font-awesome-rails"
 
 # Stripe
 gem 'stripe'

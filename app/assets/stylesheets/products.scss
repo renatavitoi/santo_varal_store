@@ -4,21 +4,23 @@
 
 
 
+* {
+	box-sizing: border-box;
+}
+
 .container-fluid {
   margin-botton: 25px,
 }
 
-.image {
+img {
+  border: 2px solid grey;
   width: 100%;
   height: auto;
-  font-size: 3em;
+  font-size: 1em;
   padding-top: 30px;
-  border-color: grey;
   margin: 5px;
   padding: 5px
 }
-
-.groove { border-style: groove; }
 
 body {
   padding: 30px;
@@ -28,11 +30,11 @@ body {
 
 .rating > label {
   float: left;
-  height: 6px;
-  margin: 0px;
-  padding-bottom: 0 10px;
-  font-size: 15px;
+  height: 0;
+  margin: 0;
+  font-size: 4em;
   position: relative;
+  width: 33,333333%;
 }
 
 .form-group {

@@ -5,7 +5,6 @@ $(document).on('turbolinks:load', function(){
     starOn: '<%= asset_path 'star-on.png' %>',
     scoreName: 'comment[rating]'
   });
-
   $('.rated').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
@@ -17,10 +16,11 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-//Alert
-  $(".alert").delay(3000).slideUp(500, function(){
-});
 
-$(document).on('turbolinkins:load', function (){
-  $('.img-zoom').elevateZomm();
+$(document).on('turbolinks:load', function (){
+  //alert
+  $(".alert").delay(5000).fadeOut(2000)
+
+  //elevateZoom JS
+  $('.img-zoom').elevateZoom();
 });
