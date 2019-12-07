@@ -18,8 +18,8 @@ img {
 
 .rating > label {
   float: left;
-  height: 0;
-  margin: 0;
+  height: 10px;
+  margin: 30px;
   font-size: 1em;
   position: relative;
   width: 33,333333%;
@@ -29,6 +29,6 @@ img {
   text-align: left;
 }
 
-.button {
+.button-subimit {
   padding: 20px;
 }
