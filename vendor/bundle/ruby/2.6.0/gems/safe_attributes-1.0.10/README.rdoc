@@ -1,0 +1,130 @@
+= SafeAttributes
+
+By default Rails/ActiveRecord 3 creates attribute accessors for all 
+database table columns in each model.  Columns with specific names 
+cause errors because they result in ActiveRecord redefining a key 
+method within either Ruby or ActiveRecord in an incompatible way.  A 
+classic example is any table with a column named 'class', though there 
+are other possible examples.  Put simply, this gem makes it easier
+to support a legacy database schema with ActiveRecord.
+
+Using this gem enhances ActiveRecord to change the default behavior for
+the creation of attribute accessors.  Instance methods in 
+ActiveRecord::Base, except for 'id', are combined into a list.  This list
+is checked before the creation of two types of attribute accessors: 
+attribute() and attribute=().  
+
+You can add to this list by calling bad_attribute_names with a list of
+method names you do not want generated.  Rails generates additional methods
+that this module does not prevent the creation of: 
+
+* attribute_before_type_cast
+* attribute_changed?
+* attribute_was
+* attribute_will_change!
+* attribute?
+
+These largely should not run afoul of Ruby or ActiveRecord in most cases.
+
+== Accessing Attributes
+
+To access an attribute in ActiveRecord without its normal getter or setter
+you can use a couple of different approaches.
+
+* \model_instance[:attribute]  # works as both getter and setter like a hash
+* model_instance.read_attribute('attribute')
+* model_instance.write_attribute('attribute', value)
+
+You can read more about reserved words[http://oldwiki.rubyonrails.org/rails/pages/ReservedWords] and magic field names[http://oldwiki.rubyonrails.org/rails/pages/MagicFieldNames] on Rails' wiki pages.
+
+== Validations 
+
+By including safe_attributes, an instance method read_attribute_for_validation
+is defined in a way that will work for all attributes instead of the 
+default implementation that relies upon the default accessors. In other
+words, `validates_presence_of :class' will work as of version 1.0.3.
+
+== Installing
+
+  gem install safe_attributes
+
+If you do not have the newest version of ActiveRecord, rubygems will 
+attempt to install it for you.  This can result in an error like below.
+
+  ERROR:  Error installing safe_attributes:
+    activemodel requires activesupport (= 3.0.3, runtime)
+
+You can use this gem with activerecord and activesupport >= 3.0.  
+If you already have an appropriate version of activerecord and 
+activesupport installed then use --ignore-dependencies to avoid this
+error.  If you have the latest version already then the gem should install
+without issue using the recommended approach above.
+
+== Using
+
+=== Ruby
+
+This gem has been tested with:
+
+* Ruby Enterprise Edition 1.8.7 2012-02-08
+* Ruby 1.9.3p374
+* JRuby 1.7.2
+
+=== Rails
+Add safe_attributes to your Gemfile.
+
+  gem 'safe_attributes'
+
+SafeAttributes is included into ActiveRecord::Base automatically.  While
+nothing else should be necessary, you can still add to the list of bad
+attributes if you find it necessary.  This list is a list of method names
+not to generate.
+
+  class MyModel < ActiveRecord::Base
+    bad_attribute_names :my_attr
+    validates_presence_of :my_attr
+  end
+
+If you do not want SafeAttributes to be automatically included into 
+ActiveRecord::Base, then instead add this to your Gemfile.
+
+  gem 'safe_attributes', :require => 'safe_attributes/base'
+
+You will then need to include the SafeAttributes::Base module into any
+model you wish to have this functionality.
+
+=== Outside of Rails
+  require 'safe_attributes/base'
+  class MyModel < ActiveRecord::Base
+    include SafeAttributes::Base
+  end
+
+== Caveats
+
+It is virtually impossible to have a column named 'attribute' in your
+schema when using ActiveRecord.  After spending some time trying to 
+make it work I've come to the conclusion the only way to support this
+will be to change the tactic I'm using entirely, and likely to
+get the developers of ActiveRecord to agree to a patch.
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010,2011,2012,2013 C. Brian Jones. See LICENSE for details.
+
+== Thanks
+
+* Jaime Bellmyer - http://kconrails.com
+* James Brennan
+* Billy Watson
+* Jean Boussier
+
