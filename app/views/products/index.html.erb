@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
-  <div class="container">
-    <div class="row">
-      <%= render @products %>
-    </div><!-- end row -->
-    <br>
-
- <%= link_to 'New Product', new_product_path %>
-   </div> <!-- end container -->
+<div class="container">
+  <div class="row">
+    <% cache(cache_key_for_products) do %>
+    <%= render @products %>
+    <% end %>
+  </div><!-- end row -->
+  <br>
+  <%= link_to 'New Product', new_product_path %>
+</div> <!-- end container -->

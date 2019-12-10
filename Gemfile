@@ -101,3 +101,6 @@ gem 'stripe'
 
 # Brakeman
 gem 'brakeman'
+
+# Dalli
+gem 'dalli'
