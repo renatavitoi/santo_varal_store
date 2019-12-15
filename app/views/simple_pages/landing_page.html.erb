@@ -1,4 +1,3 @@
-
 <h1>Welcome to Santo Varal Store</h1>
 <h2>Your source for make-up and perfumary</h2>
 
@@ -9,15 +8,15 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-      <% @products.each do |product| %>
-        <div class="carousel-item<%= " active" if product == @products.first %>">
-        <%  if product.image_url %>
-          <%= image_tag(product.image_url, class: "img-fluid") %>
-        <% end %>
-        <div class="carousel-caption d-none d-md-block">
-           <%= product.name %>
-        </div>
+    <% @products.each do |product| %>
+    <div class="carousel-item<%= " active" if product == @products.first %>">
+      <%  if product.image_url %>
+      <%= image_tag(product.image_url, class: "img-fluid") %>
+      <% end %>
+      <div class="carousel-caption d-none d-md-block">
+        <%= product.name %>
       </div>
+    </div>
     <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

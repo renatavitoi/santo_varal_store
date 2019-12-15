@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
       #return our filtered list here
     else
       @products = Product.all
+    end
   end
-end
 
   def new
     @product = Product.new

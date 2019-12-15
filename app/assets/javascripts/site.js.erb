@@ -16,13 +16,10 @@ var refreshRating = function() {
   });
 };
 
-$(document).on('turbolinks:load ajaxSuccess', function() {
-
+  $(document).on('turbolinks:load ajaxSuccess', function() {
     refreshRating();
-
     // ALERT Fadeout
     $(".alert").delay(5000).fadeOut(2000)
-
     //ElevateZoom JS
     $('.img-zoom').elevateZoom();
 });
