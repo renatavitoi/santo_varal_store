@@ -1,8 +1,8 @@
-
 <div class="col-sm-6 col-md-4">
   <%  if product.image_url %>
-  <%= image_tag(product.image_url, class: "img-fluid") %>
   <% end %>
+  <% cache product do %>
+  <%= image_tag(product.image_url, class: "img-fluid") %>
   <h1><%= link_to product.name, product %></h1>
   <p><%= product.description %></p>
   <p><%= product.colour %></p>

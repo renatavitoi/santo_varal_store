@@ -1,18 +1,19 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
 
   # GET /products
   # GET /products.json
   def index
     if params[:q]
-    search_term = params[:q]
-    @products = Product.search(search_term)
-     #return our filtered list here
+      search_term = params[:q]
+      @products = Product.search(search_term)
+      #return our filtered list here
     else
-    @products = Product.all
-   end
- end 
+      @products = Product.all
+  end
+end
 
   def new
     @product = Product.new
@@ -56,9 +57,9 @@ class ProductsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
     end
   end
-end
 
 
   # DELETE /products/1
@@ -72,13 +73,13 @@ end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def product_params
-      params.require(:product).permit(:name, :description, :image_url, :color, :colour, :price)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def product_params
+    params.require(:product).permit(:name, :description, :image_url, :color, :colour, :price)
+  end
 end

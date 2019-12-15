@@ -4,19 +4,25 @@
 
 
 
+* {
+	box-sizing: border-box;
+}
 
 .container-fluid {
   margin-botton: 25px,
 }
 
-.productImage {
-  width: 100%;
-  height: auto;
+img {
+	border: 1px solid grey;
 }
 
-.productName {
-  font-size: 3em;
-  padding-top: 30px;
+.rating > label {
+  float: left;
+  height: 10px;
+  margin: 30px;
+  font-size: 1em;
+  position: relative;
+  width: 33,333333%;
 }
 
 body {
