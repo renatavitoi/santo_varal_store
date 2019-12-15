@@ -31,7 +31,3 @@
 /config/master.key
 
 .DS_Store/
-
-## Environment normalization:
-/.bundle
-/vendor/bundle
