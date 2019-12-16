@@ -101,3 +101,11 @@ gem 'stripe'
 
 # Brakeman
 gem 'brakeman'
+
+# Dalli
+gem 'dalli'
+
+# Redis
+gem 'redis-rails'
+
+gem 'redis'

@@ -16,23 +16,20 @@
       <%= number_to_currency(@product.price, :unit => "€") %>
       <% end %>
       <hr>
-      <strong>Average rating:</strong>
-      <div id="rating1"><%= render partial: "shared/rating" %></div>
-      <div id="rating2"></div>
     </div>
   </div>
-
-  <%= form_with(url: '/payments/create') do |form| %>
-  <%= render partial: "shared/stripe_checkout_button" %>
-  <% end %>
-
-  <div class="comments">
-    <div>
-      <%= render 'comments' %>
-    </div>
-  </div>
+  <strong>Average Rating:</strong>
+    <div id="rating1"><%= render partial: "shared/rating" %></div>
+    <div id="rating2"></div>
+    <hr>
+<%= form_with(url: '/payments/create') do |form| %>
+<%= hidden_field_tag(:product_id, @product.id) %>
+<%= render partial: "shared/stripe_checkout_button" %>
+<% end %>
+<%= render 'new_comment' %>
   <div class="alert alert-info" style="display:none" role="alert">New comment was posted!</div>
-  <%= render "new_comment" %>
+  <p><%= render 'comments' %></p>
+  <div class="pagination-content"><%= will_paginate @comments %></div>
 </div>
 </div> <!-- end of column-->
 

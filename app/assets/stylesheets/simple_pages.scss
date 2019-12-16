@@ -19,19 +19,24 @@
 }
 
 .navbar-brand {
-	font-size: 1.3em;
+	font-size: 1.4em;
 }
 
 .nav {
 	z-index: 1;
 }
 
+.search-form-button {
+padding: 15px;
+bottom: 15px;
+}
+
 .carrousel-caption  {
-	color: #000000;
-	background-color: #0C0000;
+	color: #0C0000;
+	background-color: #ffff;
 	font-size: 2rem;
 	margin: 0 auto;
-	padding-top: 65px;
+	padding-top: 75px;
 	height: 100px;
 }
 
@@ -40,10 +45,6 @@
 	margin: 100px;
 	padding-top: 100px;
 	display: inline-block;
-}
-
-.button {
-	border-radius: 2px;
 }
 
 body {
@@ -55,19 +56,28 @@ body {
 }
 
 h1 {
-text-align: center;
-font-size: 2.5rem;
-margin-bottom: 1.0rem;
-padding: 1.0rem;
-background-image: 100px;
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 1.0rem;
+	padding: 1.0rem;
+	background-image: 100px;
 }
 
  h2, h5, h6 {
-font-size: 2.0rem;
-margin-bottom: 1.5rem;
-padding: 1.5rem;
-background-image: 100px;
-text-align: center;
+	font-size: 2.0rem;
+	margin-bottom: 1.5rem;
+	padding: 1.5rem;
+	background-image: 100px;
+	text-align: center;
+}
+
+.button-form {
+	border-radius: 20px;
+}
+
+.search-form-button {
+	padding: 1em;
+	margin: 0;
 }
 
 // Footer
