@@ -1,0 +1,267 @@
+/*
+* This is a manifest file that' ll be compiled into aplication.CSS, which will
+be include all the files
+* listed below
+*
+* Any CSS and SCSS files within directory, lib/assets/stylesheets,
+vendor/assets//stylesheets,
+* or vetor plugin's vendor/assets/stylesheets directory can be referenced here
+using a relative path.
+*
+* You're free to add application-wide styles to this file and they will appear
+at the bottom of the compiled file so the styles you add here take precedence
+over styles defined in any in any other CSS/SCSS files in this directory,
+Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+/*
+
+
+
+=
+*/
+/* line 7, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/comments.scss */
+.rating {
+  padding-botton: .5em;
+}
+
+/* line 11, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/comments.scss */
+.rating {
+  float: left;
+}
+
+/* line 15, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/comments.scss */
+.button {
+  padding: 20px;
+  display: inline-block;
+  color: black;
+  font-size: 16px;
+  background-color: #555555;
+}
+/* line 7, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/products.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 11, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/products.scss */
+.container-fluid {
+  margin-botton: 25px;
+}
+
+/* line 15, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/products.scss */
+img {
+  border: 1px solid grey;
+}
+
+/* line 19, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/products.scss */
+.rating > label {
+  float: left;
+  height: 0;
+  margin: 0;
+  font-size: 1em;
+  position: relative;
+  width: 33,333333%;
+}
+
+/* line 28, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/products.scss */
+.form-group {
+  text-align: left;
+}
+
+/* line 32, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/products.scss */
+.button {
+  padding: 20px;
+}
+/* line 1, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/* line 5, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.navbar-nav {
+  flex-direction: row;
+}
+
+/* line 13, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.nav a:hover {
+  color: black;
+}
+
+/* line 17, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.navbar-nav li {
+  margin-right: 15px;
+}
+
+/* line 21, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.navbar-brand {
+  font-size: 1.4em;
+}
+
+/* line 25, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.nav {
+  z-index: 1;
+}
+
+/* line 29, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.search-form-button {
+  padding: 15px;
+  bottom: 15px;
+}
+
+/* line 34, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.carrousel-caption {
+  color: #0C0000;
+  background-color: #ffff;
+  font-size: 2rem;
+  margin: 0 auto;
+  padding-top: 75px;
+  height: 100px;
+}
+
+/* line 43, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.column {
+  width: 33.3333333;
+  margin: 100px;
+  padding-top: 100px;
+  display: inline-block;
+}
+
+/* line 50, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+body {
+  background-color: #ece7e7;
+  color: #333;
+  padding: 20px;
+  margin: 20px;
+  width: 33.333333;
+}
+
+/* line 58, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.0rem;
+  padding: 1.0rem;
+  background-image: 100px;
+}
+
+/* line 66, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+h2, h5, h6 {
+  font-size: 2.0rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-image: 100px;
+  text-align: center;
+}
+
+/* line 74, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.button-form {
+  border-radius: 20px;
+}
+
+/* line 78, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.search-form-button {
+  padding: 1em;
+  margin: 0;
+}
+
+/* line 84, /Users/renatavitoi/Desktop/santo_varal_store/app/assets/stylesheets/simple_pages.scss */
+.site-footer {
+  color: black;
+  background-color: #F5F5F5;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
