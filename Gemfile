@@ -104,3 +104,8 @@ gem 'brakeman'
 
 # Dalli
 gem 'dalli'
+
+# Redis
+gem 'redis'
+
+gem 'redis-rails'
