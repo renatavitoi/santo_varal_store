@@ -1,0 +1,9 @@
+
+.rating > label {
+  float: left;
+  height: 10px;
+  margin: 30px;
+  font-size: 1em;
+  position: relative;
+  width: 33,333333%;
+}
