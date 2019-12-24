@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Product.new    
   end
 
   # GET /products/1
@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
 
       if @product.save
+        $redis.set("product:#{@product.id}", Marshal.dump(@product))
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -52,6 +53,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        $redis.set("product:#{@product.id}", Marshal.dump(@product))
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -75,7 +77,17 @@ class ProductsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-    @product = Product.find(params[:id])
+    product_id = params[:id]
+    product_cache = $redis.get("product:#{product_id}")
+
+    if product_cache
+      puts 'Loaded product from cache'
+      @product = Marshal.load(product_cache)
+    else
+      puts 'Loaded product from database'
+      @product = Product.find(product_id)
+      $redis.set("product:#{@product.id}", Marshal.dump(@product))
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
