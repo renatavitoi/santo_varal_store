@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        ActionCable.server.broadcast 'product_channel', comment: @comment, average_rating: @comment.product.average_rating
         format.js
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
@@ -18,7 +19,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @comment = Comment.find(params[:id])
     product = @comment.product
