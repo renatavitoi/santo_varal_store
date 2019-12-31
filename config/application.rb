@@ -33,5 +33,8 @@ module SantoVaralStore
 
     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
 
+    # config/application.rb
+    config.assets.initialize_on_precompile = false
+
   end
 end
