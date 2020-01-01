@@ -5,6 +5,7 @@ module ApplicationCable
     def connect
       self.current_user = find_verified_user
       protected
+    end
 
       def find_verified_user
         if verified_user = request.env['warden'].user
