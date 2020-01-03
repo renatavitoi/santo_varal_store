@@ -5,17 +5,13 @@
       <% cache @product do %>
       <p><strong>Name:</strong></p>
       <%= @product.name %>
-      <hr>
       <p><strong>Description:</strong></p>
       <%= @product.description %>
-      <hr>
       <p><strong>Colour:</strong></p>
       <%= @product.colour %>
-      <hr>
       <p><strong>Price:</strong></p>
       <%= number_to_currency(@product.price, :unit => "€") %>
       <% end %>
-      <hr>
     </div>
   </div>
   <strong>Average Rating:</strong>

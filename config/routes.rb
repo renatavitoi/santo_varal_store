@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   resources :users
   resources :orders, only: [:index, :show, :create, :destroy]
 
-
-
 get 'simple_pages/about'
 get 'simple_pages/contact'
 get 'simple_pages/index'
@@ -18,14 +16,13 @@ get '/products/:users/1', to: 'products#show'
 get 'products/index'
 get 'product', to: 'products#index'
 get '/sign_out' => 'users/sessions#destroy'
+get 'payments/create', as: 'payments'
 
 post 'simple_pages/thank_you'
-post 'payments/create', as: 'payments'
+post 'payments/create'
 
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root 'simple_pages#landing_page'
-
-
 
 mount ActionCable.server => '/cable'
 end

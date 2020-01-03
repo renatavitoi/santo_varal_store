@@ -84,17 +84,19 @@ gem "devise", ">= 4.7.1"
 #Cancancan
 gem 'cancancan', '~> 1.10'
 
+
 # Ratyrate
 gem 'ratyrate'
+
+# FontAwesome
+gem "font-awesome-rails"
+
 
 #Safe_attributes
 gem 'safe_attributes'
 
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.1'
-
-# FontAwesome
-gem "font-awesome-rails"
 
 # Stripe
 gem 'stripe'
