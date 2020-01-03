@@ -63,4 +63,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   config.app_generators.javascript_engine = :javascript
+
+  config.action_cable.url = "ws://localhost:3000/cable"
   end
