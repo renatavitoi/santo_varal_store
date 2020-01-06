@@ -16,3 +16,9 @@
 //= require jquery3
 //= require jquery.raty.js
 //= require_tree .
+
+var dispatcher = new WebSocketRails('localhost:3000/websocket')
+
+$(document).on('turbolinks:load', function(){
+  $(".alert").delay(4000).fadeOut("ease");
+});

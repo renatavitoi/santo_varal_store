@@ -53,6 +53,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
@@ -62,7 +63,9 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
-  config.app_generators.javascript_engine = :javascript
+  config.action_cable.url = 'localhost:3000/cable'  
+  config.action_cable.allowed_request_origins = ['https://floating-bayou-55110.herokuapp.com/', 'https://floating-bayou-55110.herokuapp.com/']
+  config.web_socket_server_url = "wss://floating-bayou-55110/cable"
 
-  config.action_cable.url = "ws://localhost:3000/cable"
-  end
+  config.app_generators.javascript_engine = :javascript
+end
