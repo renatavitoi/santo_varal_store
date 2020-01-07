@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Product do
   context "when the product has comments" do
-    let(:product) { Product.create!(name: "race bike") }
+    let(:product) { Product.create!(name: "race bike", colour: "white", description: "awesome bike", price: 200) }
     let(:user) { User.create!(email: "santovaralstore@gmail.com", password: "password") }
 
     before do
