@@ -11,7 +11,8 @@
 }
 
 .nav a:hover {
-	color: black;
+	color: white;
+	background-color: black;
 }
 
 .navbar-nav li {
@@ -27,19 +28,22 @@
 }
 
 .search-form-button {
-padding: 15px;
-bottom: 15px;
+	padding: 15px;
+	bottom: 15px;
 }
 
 .carrousel-caption  {
-	color: #0C0000;
-	background-color: #ffff;
+	color: #FCFBFB;
+	background-color: #FCFBFB;
 	font-size: 2rem;
 	margin: 0 auto;
 	padding-top: 75px;
 	height: 100px;
 }
 
+.carrousel-image {
+	width: 100%, !important
+}
 .column {
 	width: 33.3333333;
 	margin: 100px;
@@ -48,11 +52,12 @@ bottom: 15px;
 }
 
 body {
-	background-color: #ece7e7;
-	color: #333;
+	background-color: #E0C2C2;
+	color: #17202A;
 	padding: 20px;
 	margin: 20px;
 	width: 33.333333;
+	font-family: Cursive, Helvetica, sans-serif;
 }
 
 h1 {
@@ -63,7 +68,7 @@ h1 {
 	background-image: 100px;
 }
 
- h2, h5, h6 {
+h2,h4, h5, h6 {
 	font-size: 2.0rem;
 	margin-bottom: 1.5rem;
 	padding: 1.5rem;
@@ -77,15 +82,67 @@ h1 {
 
 .search-form-button {
 	padding: 1em;
-	margin: 0;
+	margin: 20px;
+	border: 1px;
+	border-color: groove solid grey;
 }
 
 // Footer
 .site-footer {
 	color: black;
-	background-color: #F5F5F5;
-	position: relative;
-	padding: 20px;
-	margin-bottom: 20px;
+	background-color: #FFFFFF;
+	flex-direction: row;
+	padding: 30px;
+	margin-bottom: 50px;
 	text-align: center;
+	bottom: 100px;
+}
+
+// About
+
+.content-about {
+	width: 70px;
+	margin: auto;
+	text-align: left;
+}
+
+.about-image {
+	width: 100%;
+}
+
+
+//contact
+
+.content-contact {
+	margin: 20px;
+	padding: 20px;
+}
+
+.form-group {
+	text-align: left;
+}
+
+.form-control {
+	position: relative;
+	border: 1px;
+	border-color: groove solid grey;
+	border-style: solid;
+	padding: 3px, 6px;
+	font-size: 1em;
+	border-radius: 0.5em;
+	margin: 0.7em 0.5em;
+	display: block;
+}
+
+
+// Media queries
+
+@media only screen and (max-width: 768px) {
+
+	.navbar-nav, .in {
+		background-color: #1C2331;
+		position: relative;
+		top:100px;
+		right: 0;
+	}
 }

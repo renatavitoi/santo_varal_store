@@ -2,9 +2,9 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    token = params[:stripeToken]
     @product = Product.find(params[:product_id])
     @user = current_user
+    token = params[:stripeToken]
     # Create the charge on Stripe's servers - this will charge the user's card
 
     begin
