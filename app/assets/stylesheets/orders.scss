@@ -14,3 +14,54 @@
 body {
   text-align: center;
 }
+
+.orders-image {
+  max-width: 11% !important;
+  float: left;
+  padding: 1em 0;
+}
+
+.orders-header {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+
+
+  p {
+    margin-bottom: 0;
+    padding: .5em;
+  }
+
+  h6 {
+    margin-bottom: 0;
+    padding: .6em 0;
+  }
+
+  :hover {
+    text-decoration: none !important;
+    color: grey;
+  }
+//end orders-index
+
+//orders-show
+.content-orders-show {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 5.5em;
+  margin-bottom: 2em;
+  padding: 0;
+}
+
+.orders-show-header {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+
+  :hover {
+    text-decoration: none !important;
+    color: grey;
+  }
+
+//end orders-index
