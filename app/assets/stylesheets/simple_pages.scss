@@ -9,8 +9,27 @@
 	box-sizing: border-box;
 }
 
-.navbar {
-	background-color: #ff1f70!important;
+a:visited {
+	color: #434343;
+}
+
+a:hover {
+	background-color: transparent;
+	cursor: pointer;
+}
+
+a {
+	color: #434343;
+	text-decoration: none;
+}
+
+.logo {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.logo-secondary-color {
+	color: #ff1f70;
 }
 
 .navbar-nav {
@@ -24,6 +43,14 @@
 
 .navbar-nav li {
 	margin-right: 15px;
+}
+
+.navbar-nav .nav-item {
+	text-transform: uppercase;
+}
+
+.navbar-nav .nav-item:hover {
+	transform: scale(1.2);
 }
 
 .navbar-brand {
