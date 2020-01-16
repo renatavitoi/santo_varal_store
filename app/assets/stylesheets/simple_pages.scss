@@ -11,10 +11,12 @@
 
 a:visited {
 	color: #434343;
+	text-decoration: none;
 }
 
 a:hover {
 	background-color: transparent;
+	text-decoration: none;
 	cursor: pointer;
 }
 
@@ -45,12 +47,17 @@ a {
 	margin-right: 15px;
 }
 
+.navbar-nav > * {
+	color: #434343;
+}
+
 .navbar-nav .nav-item {
 	text-transform: uppercase;
 }
 
 .navbar-nav .nav-item:hover {
 	transform: scale(1.2);
+	cursor: pointer;
 }
 
 .navbar-brand {
@@ -88,7 +95,7 @@ a {
 body {
 	padding: 0;
 	margin: 0;
-	color: #333232;
+	color: #434343;
 }
 
 h1 {
@@ -105,6 +112,11 @@ h2,h4, h5, h6 {
 	padding: 1.5rem;
 	background-image: 100px;
 	text-align: center;
+}
+
+label:hover {
+	text-decoration: none !important;
+  color: #434343;
 }
 
 .button-form {
@@ -163,6 +175,11 @@ h2,h4, h5, h6 {
 	border-radius: 0.5em;
 	margin: 0.7em 0.5em;
 	display: block;
+}
+
+// Helpers
+.text-bold {
+	font-weight: bold;
 }
 
 
