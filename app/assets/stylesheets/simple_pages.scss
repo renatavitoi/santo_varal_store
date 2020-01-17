@@ -25,47 +25,19 @@ a {
 	text-decoration: none;
 }
 
+li {
+	list-style-type: none;
+}
+
 .logo {
 	font-weight: bold;
 	text-transform: uppercase;
+	font-size: 0.9rem;
 }
 
 .logo-secondary-color {
 	color: #ff1f70;
-}
-
-.navbar-nav {
-	flex-direction: row;
-}
-
-.nav a:hover {
-	color: white;
-	background-color: black;
-}
-
-.navbar-nav li {
-	margin-right: 15px;
-}
-
-.navbar-nav > * {
-	color: #434343;
-}
-
-.navbar-nav .nav-item {
-	text-transform: uppercase;
-}
-
-.navbar-nav .nav-item:hover {
-	transform: scale(1.2);
-	cursor: pointer;
-}
-
-.navbar-brand {
-	font-size: 1.4em;
-}
-
-.nav {
-	z-index: 1;
+	font-size: 0.9rem;
 }
 
 .search-form-button {
@@ -180,17 +152,4 @@ label:hover {
 // Helpers
 .text-bold {
 	font-weight: bold;
-}
-
-
-// Media queries
-
-@media only screen and (max-width: 768px) {
-
-	.navbar-nav, .in {
-		background-color: #1C2331;
-		position: relative;
-		top:100px;
-		right: 0;
-	}
 }
