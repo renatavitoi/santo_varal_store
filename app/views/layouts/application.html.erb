@@ -39,7 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Home", root_path, :class => "nav-link"%><span class="sr-only">(current)</span>
+            <%= link_to "Home", root_path, :class => "nav-link"%>
           </li>
           <li class="nav-item">
             <%= link_to "About", simple_pages_about_path, :class => "nav-link"%>
@@ -81,17 +81,14 @@
       <% elsif alert %>
       <p class="alert alert-danger"><%= alert %></p>
       <% end %>
+
+      <%= yield %>
     </div>
 
-    <%= yield %>
-
-    <div class="footer">
-      <div class="container">
-        <p class="text-muted"><span class="glyphicon glyphicon-grain"></span>
-          <footer class="site-footer">
-            &copy, 2019 Santo Varal Store
-          </footer>
-
+    <footer class="footer site-footer">
+      <p class="text-muted"><span class="glyphicon glyphicon-grain"></span>
+      &copy, 2019 Santo Varal Store
+    </footer>
   </body>
 
 </html>
