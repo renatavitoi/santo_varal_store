@@ -49,18 +49,14 @@ li {
 	bottom: 15px;
 }
 
-.carrousel-caption  {
-	color: #FCFBFB;
-	background-color: #FCFBFB;
-	font-size: 2rem;
-	margin: 0 auto;
-	padding-top: 75px;
-	height: 100px;
+.carousel-control-next:hover, .carousel-control-prev:hover {
+	background-color: #27272729!important;
 }
 
-.carrousel-image {
-	width: 100%, !important
+.carousel-control-next, .carousel-control-prev {
+	color: black!important;
 }
+
 .column {
 	width: 33.3333333;
 	margin: 100px;
