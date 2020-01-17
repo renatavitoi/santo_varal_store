@@ -26,14 +26,19 @@ describe Comment do
       expect(comments[1].rating).to eq 5
       expect(comments[2].rating).to eq 9
     end
-
   end
 
-  context "when the Comment is be constructed without user, product and body" do
-    let(:comment) { Comment.new() }
-
-    it "returns a Comment invalid" do
-      expect(comment).not_to be_valid
+  context "when a comment is create" do
+    it "not valid without a user" do
+      expect(Comment.new(user_id: nil, body: "This is a Text")).to_not be_valid
     end
+  end
+
+  it "not valid without a product_id" do
+    expect(Comment.new(product_id: nil, body: "This is a text")).to_not be_valid
+  end
+
+  it "not valid without a body" do
+    expect(Comment.new(body:nil)).not_to be_valid
   end
 end

@@ -84,13 +84,11 @@ gem "devise", ">= 4.7.1"
 #Cancancan
 gem 'cancancan', '~> 1.10'
 
-
 # Ratyrate
 gem 'ratyrate'
 
 # FontAwesome
 gem "font-awesome-rails"
-
 
 #Safe_attributes
 gem 'safe_attributes'

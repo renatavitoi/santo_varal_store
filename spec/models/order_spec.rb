@@ -7,6 +7,5 @@ describe Order do
     it "returns a order invalid" do
       expect(order).not_to be_valid
     end
-
   end
 end
