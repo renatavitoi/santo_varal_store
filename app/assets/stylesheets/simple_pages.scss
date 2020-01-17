@@ -9,6 +9,10 @@
 	box-sizing: border-box;
 }
 
+p {
+	padding: 0;
+}
+
 a:visited {
 	color: #434343;
 	text-decoration: none;
@@ -111,42 +115,6 @@ label:hover {
 	margin-bottom: 50px;
 	text-align: center;
 	bottom: 100px;
-}
-
-// About
-
-.content-about {
-	width: 70px;
-	margin: auto;
-	text-align: left;
-}
-
-.about-image {
-	width: 100%;
-}
-
-
-//contact
-
-.content-contact {
-	margin: 20px;
-	padding: 20px;
-}
-
-.form-group {
-	text-align: left;
-}
-
-.form-control {
-	position: relative;
-	border: 1px;
-	border-color: groove solid grey;
-	border-style: solid;
-	padding: 3px, 6px;
-	font-size: 1em;
-	border-radius: 0.5em;
-	margin: 0.7em 0.5em;
-	display: block;
 }
 
 // Helpers
