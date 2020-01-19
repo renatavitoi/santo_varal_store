@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 // COLOR PALLET
 // background-color: #ff1f70!important;
 // color: #333232;
+
+
 * {
 	box-sizing: border-box;
 }
@@ -13,55 +16,57 @@ p {
 	padding: 0;
 }
 
+
 a:visited {
 	color: #434343;
 	text-decoration: none;
 }
 
+
 a:hover {
-	background-color: transparent;
-	text-decoration: none;
-	cursor: pointer;
+background-color: transparent;
+text-decoration: none;
+cursor: pointer;
 }
 
 a {
-	color: #434343;
-	text-decoration: none;
+color: #434343;
+text-decoration: none;
 }
 
 li {
-	list-style-type: none;
+list-style-type: none;
 }
 
 .logo {
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 0.9rem;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 0.9rem;
 }
 
 .logo-secondary-color {
-	color: #ff1f70;
-	font-size: 0.9rem;
+color: #ff1f70;
+font-size: 0.9rem;
 }
 
 .search-form-button {
-	padding: 15px;
-	bottom: 15px;
+padding: 15px;
+bottom: 15px;
 }
 
 .carousel-control-next:hover, .carousel-control-prev:hover {
-	background-color: #27272729!important;
+background-color: #27272729!important;
 }
 
 .carousel-control-next, .carousel-control-prev {
-	color: black!important;
+color: black!important;
 }
 
 .column {
-	width: 33.3333333;
-	margin: 100px;
-	padding-top: 100px;
-	display: inline-block;
+width: 33.3333333;
+margin: 100px;
+padding-top: 100px;
+display: inline-block;
 }
 
 body {
@@ -70,55 +75,86 @@ body {
 	color: #434343;
 }
 
-img {
-	width: 100%;
-	hight: auto;
-}
-
 h1 {
-	text-align: center;
-	font-size: 2.5rem;
-	margin-bottom: 1.0rem;
-	padding: 1.0rem;
-	background-image: 100px;
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 1.0rem;
+padding: 1.0rem;
+background-image: 100px;
 }
 
 h2,h4, h5, h6 {
-	font-size: 2.0rem;
-	margin-bottom: 1.5rem;
-	padding: 1.5rem;
-	background-image: 100px;
-	text-align: center;
+font-size: 2.0rem;
+margin-bottom: 1.5rem;
+padding: 1.5rem;
+background-image: 100px;
+text-align: center;
 }
 
 label:hover {
-	text-decoration: none !important;
+text-decoration: none !important;
   color: #434343;
 }
 
 .button-form {
-	border-radius: 20px;
+border-radius: 20px;
 }
 
 .search-form-button {
-	padding: 1em;
-	margin: 20px;
-	border: 1px;
-	border-color: groove solid grey;
+padding: 1em;
+margin: 20px;
+border: 1px;
+border-color: groove solid grey;
 }
 
 // Footer
 .site-footer {
-	color: black;
-	background-color: #FFFFFF;
-	flex-direction: row;
-	padding: 30px;
-	margin-bottom: 50px;
-	text-align: center;
-	bottom: 100px;
+color: black;
+background-color: #FFFFFF;
+flex-direction: row;
+padding: 30px;
+margin-bottom: 50px;
+text-align: center;
+bottom: 100px;
 }
 
 // Helpers
 .text-bold {
-	font-weight: bold;
+font-weight: bold;
+}
+
+
+// About
+
+.content-about {
+	width: 70px;
+	margin: auto;
+	text-align: left;
+}
+
+.about-image {
+	width: 100%;
+}
+
+//contact
+
+.content-contact {
+	margin: 20px;
+	padding: 20px;
+}
+
+.form-group {
+	text-align: left;
+}
+
+.form-control {
+	position: relative;
+	border: 1px;
+	border-color: groove solid grey;
+	border-style: solid;
+	padding: 3px, 6px;
+	font-size: 1em;
+	border-radius: 0.5em;
+	margin: 0.7em 0.5em;
+	display: block;
 }
