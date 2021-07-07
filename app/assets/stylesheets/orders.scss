@@ -1,0 +1,57 @@
+// Place all the styles related to the payments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// orders z-index
+
+.content-orders-index {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px px;
+}
+
+body {
+  text-align: center;
+}
+
+.orders-image {
+  max-width: 11% !important;
+  float: left;
+  padding: 1em 0;
+}
+
+.orders-header {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+
+
+  p {
+    margin-bottom: 0;
+    padding: .5em;
+  }
+
+  h6 {
+    margin-bottom: 0;
+    padding: .6em 0;
+  }
+//end orders-index
+
+//orders-show
+.content-orders-show {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 5.5em;
+  margin-bottom: 2em;
+  padding: 0;
+}
+
+.orders-show-header {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+
+//end orders-index

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe OrdersController, type: :controller do
-  let!(:product) { Product.create!(name: "race bike") }
+  let!(:product) { Product.create!(name: "race bike", colour: "white", price: 200, description: "awesome bike") }
   let(:user) { User.create!(email: "santovaralstore@gmail.com", password: "password") }
   let!(:order) { Order.create!(user: user, product: product) }
 

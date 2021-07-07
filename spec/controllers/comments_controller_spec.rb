@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe CommentsController, type: :controller do
   let(:user) { User.create!(email: "santovaralstore@gmail.com", password: "password") }
-  let!(:product) { Product.create!(name: "product") }
-  let!(:comment) { Comment.create!(body: "comment", user: user, product: product) }
+  let!(:product) { Product.create!(name: "product", colour: "white", price: 2, description: "awesome bike") }
+  let!(:comment) { Comment.create!(body: "comment", user: user, product: product, rating: 2) }
   
   context 'User is admin' do
     let(:admin) { User.create!(email: 'admin@example.com', password: '1234567890', admin: true) }

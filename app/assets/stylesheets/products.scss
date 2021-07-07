@@ -4,6 +4,8 @@
 
 
 
+
+
 * {
 	box-sizing: border-box;
 }
@@ -14,15 +16,34 @@
 
 img {
 	border: 1px solid grey;
+	padding: 20px;
+	margin-top: 30px;
+}
+
+
+body {
+position: relative;
+font-size: 2em;
+height: 20px;
+margin: 0 0 4em;
+text-align: left;
+margin: 30px;
+
 }
 
 .rating > label {
   float: left;
-  height: 10px;
-  margin: 30px;
-  font-size: 1em;
+  height: auto;
+  margin: 0px;
+  font-size: 1.5em;
   position: relative;
   width: 33,333333%;
+}
+
+:root {
+  --star-size: 60px;
+  --star-color: #fff;
+  --star-background: #fc0;
 }
 
 .form-group {
